@@ -9,16 +9,6 @@ interface ProductCardProps {
   item: MenuItem;
 }
 
-const categoryImages: Record<string, string> = {
-  dosa: '🥞',
-  idli: '🍚',
-  vada: '🍩',
-  rice: '🍛',
-  curry: '🍲',
-  snacks: '🥘',
-  beverages: '☕',
-  desserts: '🍮',
-};
 
 export function ProductCard({ item }: ProductCardProps) {
   const { addToCart } = useCart();
@@ -33,9 +23,13 @@ export function ProductCard({ item }: ProductCardProps) {
 
   return (
     <div className="bg-card rounded-lg border border-border p-4 hover:shadow-lg transition-shadow duration-200 flex flex-col animate-fade-in">
-      {/* Image placeholder */}
-      <div className="bg-secondary rounded-lg h-40 flex items-center justify-center text-6xl mb-4">
-        {categoryImages[item.category]}
+      {/* Food Image */}
+      <div className="rounded-lg h-40 mb-4 overflow-hidden">
+        <img
+          src={item.image}
+          alt={item.name}
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        />
       </div>
 
       {/* Content */}
