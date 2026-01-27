@@ -17,11 +17,11 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Authentic South Indian Cuisine
+                Where Every Bite Tells a Story
               </h1>
               <p className="text-lg opacity-90 mb-6 max-w-lg">
-                Experience the rich flavors of traditional South Indian food. 
-                From crispy dosas to fluffy idlis, delivered fresh to your doorstep.
+                Discover the authentic flavors of South India. Crispy dosas, fluffy idlis, 
+                and aromatic spices—crafted with love, delivered to your door.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                 <Button asChild size="xl" variant="accent">

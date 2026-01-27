@@ -7,10 +7,10 @@ export default function About() {
       {/* Hero */}
       <div className="bg-header text-primary-foreground py-16">
         <div className="container mx-auto px-4 text-center">
-          <span className="text-6xl mb-4 block">🍛</span>
-          <h1 className="text-4xl font-bold mb-4">About Annapurna</h1>
+          <span className="text-6xl mb-4 block">🍽️</span>
+          <h1 className="text-4xl font-bold mb-4">About The South Plate</h1>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
-            Bringing authentic South Indian flavors to your table since 2010
+            Crafting Authentic South Indian Flavors Since 2010
           </p>
         </div>
       </div>
@@ -21,9 +21,9 @@ export default function About() {
           <h2 className="text-3xl font-bold mb-6 text-center">Our Story</h2>
           <div className="prose prose-lg text-muted-foreground mx-auto">
             <p className="mb-4">
-              Annapurna was founded with a simple vision: to bring the authentic taste of 
-              South Indian cuisine to food lovers everywhere. Named after the Hindu goddess 
-              of food and nourishment, we believe that every meal should be a celebration.
+              The South Plate was born from a passion to share the rich culinary heritage 
+              of South India with the world. We believe food is more than sustenance—it's 
+              an experience that connects generations and cultures.
             </p>
             <p className="mb-4">
               Our journey began in a small kitchen in Chennai, where our founder learned 
