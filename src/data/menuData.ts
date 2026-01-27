@@ -1,5 +1,42 @@
 import { MenuItem } from '@/types/hotel';
 
+// Import all food images
+import masalaDosa from '@/assets/food/masala-dosa.jpg';
+import mysoreDosa from '@/assets/food/mysore-dosa.jpg';
+import ravaDosa from '@/assets/food/rava-dosa.jpg';
+import gheeRoastDosa from '@/assets/food/ghee-roast-dosa.jpg';
+import paperDosa from '@/assets/food/paper-dosa.jpg';
+import onionDosa from '@/assets/food/onion-dosa.jpg';
+import idliSambar from '@/assets/food/idli-sambar.jpg';
+import podiIdli from '@/assets/food/podi-idli.jpg';
+import ravaIdli from '@/assets/food/rava-idli.jpg';
+import miniIdli from '@/assets/food/mini-idli.jpg';
+import meduVada from '@/assets/food/medu-vada.jpg';
+import sambarVada from '@/assets/food/sambar-vada.jpg';
+import dahiVada from '@/assets/food/dahi-vada.jpg';
+import masalaVada from '@/assets/food/masala-vada.jpg';
+import curdRice from '@/assets/food/curd-rice.jpg';
+import lemonRice from '@/assets/food/lemon-rice.jpg';
+import tamarindRice from '@/assets/food/tamarind-rice.jpg';
+import bisiBeleBath from '@/assets/food/bisi-bele-bath.jpg';
+import coconutRice from '@/assets/food/coconut-rice.jpg';
+import sambar from '@/assets/food/sambar.jpg';
+import rasam from '@/assets/food/rasam.jpg';
+import avial from '@/assets/food/avial.jpg';
+import kootu from '@/assets/food/kootu.jpg';
+import upma from '@/assets/food/upma.jpg';
+import pongal from '@/assets/food/pongal.jpg';
+import uttapam from '@/assets/food/uttapam.jpg';
+import pesarattu from '@/assets/food/pesarattu.jpg';
+import filterCoffee from '@/assets/food/filter-coffee.jpg';
+import masalaChai from '@/assets/food/masala-chai.jpg';
+import buttermilk from '@/assets/food/buttermilk.jpg';
+import mangoLassi from '@/assets/food/mango-lassi.jpg';
+import kesariBath from '@/assets/food/kesari-bath.jpg';
+import payasam from '@/assets/food/payasam.jpg';
+import mysorePak from '@/assets/food/mysore-pak.jpg';
+import coconutBurfi from '@/assets/food/coconut-burfi.jpg';
+
 export const menuItems: MenuItem[] = [
   // Dosas
   {
@@ -10,6 +47,7 @@ export const menuItems: MenuItem[] = [
     category: 'dosa',
     isVeg: true,
     isPopular: true,
+    image: masalaDosa,
   },
   {
     id: 'd2',
@@ -19,6 +57,7 @@ export const menuItems: MenuItem[] = [
     category: 'dosa',
     isVeg: true,
     isSpicy: true,
+    image: mysoreDosa,
   },
   {
     id: 'd3',
@@ -27,6 +66,7 @@ export const menuItems: MenuItem[] = [
     price: 90,
     category: 'dosa',
     isVeg: true,
+    image: ravaDosa,
   },
   {
     id: 'd4',
@@ -36,6 +76,7 @@ export const menuItems: MenuItem[] = [
     category: 'dosa',
     isVeg: true,
     isPopular: true,
+    image: gheeRoastDosa,
   },
   {
     id: 'd5',
@@ -44,6 +85,7 @@ export const menuItems: MenuItem[] = [
     price: 70,
     category: 'dosa',
     isVeg: true,
+    image: paperDosa,
   },
   {
     id: 'd6',
@@ -52,6 +94,7 @@ export const menuItems: MenuItem[] = [
     price: 85,
     category: 'dosa',
     isVeg: true,
+    image: onionDosa,
   },
 
   // Idlis
@@ -63,6 +106,7 @@ export const menuItems: MenuItem[] = [
     category: 'idli',
     isVeg: true,
     isPopular: true,
+    image: idliSambar,
   },
   {
     id: 'i2',
@@ -72,6 +116,7 @@ export const menuItems: MenuItem[] = [
     category: 'idli',
     isVeg: true,
     isSpicy: true,
+    image: podiIdli,
   },
   {
     id: 'i3',
@@ -80,6 +125,7 @@ export const menuItems: MenuItem[] = [
     price: 60,
     category: 'idli',
     isVeg: true,
+    image: ravaIdli,
   },
   {
     id: 'i4',
@@ -88,6 +134,7 @@ export const menuItems: MenuItem[] = [
     price: 65,
     category: 'idli',
     isVeg: true,
+    image: miniIdli,
   },
 
   // Vadas
@@ -99,6 +146,7 @@ export const menuItems: MenuItem[] = [
     category: 'vada',
     isVeg: true,
     isPopular: true,
+    image: meduVada,
   },
   {
     id: 'v2',
@@ -107,6 +155,7 @@ export const menuItems: MenuItem[] = [
     price: 60,
     category: 'vada',
     isVeg: true,
+    image: sambarVada,
   },
   {
     id: 'v3',
@@ -115,6 +164,7 @@ export const menuItems: MenuItem[] = [
     price: 65,
     category: 'vada',
     isVeg: true,
+    image: dahiVada,
   },
   {
     id: 'v4',
@@ -124,6 +174,7 @@ export const menuItems: MenuItem[] = [
     category: 'vada',
     isVeg: true,
     isSpicy: true,
+    image: masalaVada,
   },
 
   // Rice Items
@@ -135,6 +186,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice',
     isVeg: true,
     isPopular: true,
+    image: curdRice,
   },
   {
     id: 'r2',
@@ -143,6 +195,7 @@ export const menuItems: MenuItem[] = [
     price: 75,
     category: 'rice',
     isVeg: true,
+    image: lemonRice,
   },
   {
     id: 'r3',
@@ -152,6 +205,7 @@ export const menuItems: MenuItem[] = [
     category: 'rice',
     isVeg: true,
     isSpicy: true,
+    image: tamarindRice,
   },
   {
     id: 'r4',
@@ -162,6 +216,7 @@ export const menuItems: MenuItem[] = [
     isVeg: true,
     isSpicy: true,
     isPopular: true,
+    image: bisiBeleBath,
   },
   {
     id: 'r5',
@@ -170,6 +225,7 @@ export const menuItems: MenuItem[] = [
     price: 85,
     category: 'rice',
     isVeg: true,
+    image: coconutRice,
   },
 
   // Curries
@@ -180,6 +236,7 @@ export const menuItems: MenuItem[] = [
     price: 60,
     category: 'curry',
     isVeg: true,
+    image: sambar,
   },
   {
     id: 'c2',
@@ -189,6 +246,7 @@ export const menuItems: MenuItem[] = [
     category: 'curry',
     isVeg: true,
     isSpicy: true,
+    image: rasam,
   },
   {
     id: 'c3',
@@ -197,6 +255,7 @@ export const menuItems: MenuItem[] = [
     price: 90,
     category: 'curry',
     isVeg: true,
+    image: avial,
   },
   {
     id: 'c4',
@@ -205,6 +264,7 @@ export const menuItems: MenuItem[] = [
     price: 85,
     category: 'curry',
     isVeg: true,
+    image: kootu,
   },
 
   // Snacks
@@ -215,6 +275,7 @@ export const menuItems: MenuItem[] = [
     price: 55,
     category: 'snacks',
     isVeg: true,
+    image: upma,
   },
   {
     id: 's2',
@@ -224,6 +285,7 @@ export const menuItems: MenuItem[] = [
     category: 'snacks',
     isVeg: true,
     isPopular: true,
+    image: pongal,
   },
   {
     id: 's3',
@@ -232,6 +294,7 @@ export const menuItems: MenuItem[] = [
     price: 75,
     category: 'snacks',
     isVeg: true,
+    image: uttapam,
   },
   {
     id: 's4',
@@ -240,6 +303,7 @@ export const menuItems: MenuItem[] = [
     price: 70,
     category: 'snacks',
     isVeg: true,
+    image: pesarattu,
   },
 
   // Beverages
@@ -251,6 +315,7 @@ export const menuItems: MenuItem[] = [
     category: 'beverages',
     isVeg: true,
     isPopular: true,
+    image: filterCoffee,
   },
   {
     id: 'b2',
@@ -259,6 +324,7 @@ export const menuItems: MenuItem[] = [
     price: 30,
     category: 'beverages',
     isVeg: true,
+    image: masalaChai,
   },
   {
     id: 'b3',
@@ -267,6 +333,7 @@ export const menuItems: MenuItem[] = [
     price: 35,
     category: 'beverages',
     isVeg: true,
+    image: buttermilk,
   },
   {
     id: 'b4',
@@ -275,6 +342,7 @@ export const menuItems: MenuItem[] = [
     price: 60,
     category: 'beverages',
     isVeg: true,
+    image: mangoLassi,
   },
 
   // Desserts
@@ -286,6 +354,7 @@ export const menuItems: MenuItem[] = [
     category: 'desserts',
     isVeg: true,
     isPopular: true,
+    image: kesariBath,
   },
   {
     id: 'de2',
@@ -294,6 +363,7 @@ export const menuItems: MenuItem[] = [
     price: 60,
     category: 'desserts',
     isVeg: true,
+    image: payasam,
   },
   {
     id: 'de3',
@@ -302,6 +372,7 @@ export const menuItems: MenuItem[] = [
     price: 50,
     category: 'desserts',
     isVeg: true,
+    image: mysorePak,
   },
   {
     id: 'de4',
@@ -310,6 +381,7 @@ export const menuItems: MenuItem[] = [
     price: 45,
     category: 'desserts',
     isVeg: true,
+    image: coconutBurfi,
   },
 ];
 
