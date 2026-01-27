@@ -25,10 +25,10 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 shrink-0">
-              <span className="text-2xl">🍛</span>
+              <span className="text-2xl">🍽️</span>
               <div>
-                <h1 className="text-xl font-bold leading-tight">Annapurna</h1>
-                <p className="text-[10px] opacity-80">South Indian Food</p>
+                <h1 className="text-xl font-bold leading-tight">The South Plate</h1>
+                <p className="text-[10px] opacity-80">Taste the Tradition</p>
               </div>
             </Link>
 
