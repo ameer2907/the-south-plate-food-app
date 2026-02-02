@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useCart } from '@/context/CartContext';
 import { useAuth } from '@/context/AuthContext';
-import { menuItems } from '@/data/menuData';
+import { menuItems, categoryLabels } from '@/data/menuData';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -186,8 +186,8 @@ export function Navbar() {
               <DropdownMenuContent align="end" className="w-48 bg-popover">
                 {isAuthenticated ? (
                   <>
-                    <DropdownMenuItem onClick={() => navigate('/orders')}>
-                      Your Orders
+                    <DropdownMenuItem onClick={() => navigate('/cart')}>
+                      Your Cart
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={logout} className="text-destructive">
@@ -231,22 +231,32 @@ export function Navbar() {
       <div className="bg-header-secondary text-primary-foreground">
         <div className="container mx-auto px-4">
           <nav className="flex items-center gap-1 py-2 text-sm overflow-x-auto">
-            <Link to="/" className="flex items-center gap-1 px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
-              <Menu className="h-4 w-4" />
-              All Categories
-            </Link>
-            <Link to="/products" className="px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
-              Menu
-            </Link>
-            <Link to="/products?category=dosa" className="px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
-              Dosas
-            </Link>
-            <Link to="/products?category=idli" className="px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
-              Idlis
-            </Link>
-            <Link to="/products?category=rice" className="px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
-              Rice Items
-            </Link>
+            {/* All Categories Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center gap-1 px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
+                  <Menu className="h-4 w-4" />
+                  All Categories
+                  <ChevronDown className="h-3 w-3" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56 bg-popover">
+                <DropdownMenuItem onClick={() => navigate('/products')}>
+                  <span className="mr-2">📋</span>
+                  Full Menu
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                {Object.entries(categoryLabels).map(([key, label]) => (
+                  <DropdownMenuItem
+                    key={key}
+                    onClick={() => navigate(`/products?category=${key}`)}
+                  >
+                    {label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Link to="/about" className="px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
               About Us
             </Link>
