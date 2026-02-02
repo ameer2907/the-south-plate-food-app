@@ -96,13 +96,17 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Popular Items */}
-      <div className="bg-secondary py-10">
+      {/* Best Sellers - Prominently placed after features */}
+      <div className="bg-accent/10 py-8 border-b border-border">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold">Today's Bestsellers</h2>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🏆</span>
+              <h2 className="text-2xl font-bold text-foreground">Best Sellers</h2>
+              <span className="bg-accent text-accent-foreground text-xs font-bold px-2 py-1 rounded">TOP PICKS</span>
+            </div>
             <Link to="/products" className="text-primary hover:underline font-medium flex items-center gap-1">
-              See all <ArrowRight className="h-4 w-4" />
+              View all <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
