@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 export function Footer() {
@@ -14,104 +14,87 @@ export function Footer() {
       {/* Back to top */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="w-full py-3 bg-header-secondary hover:bg-header-secondary/80 text-sm text-center transition-colors"
+        className="w-full py-3 bg-header-secondary hover:bg-header-secondary/90 text-sm tracking-wide transition-colors"
       >
         ↑ Back to top
       </button>
 
-      {/* Links */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* About Section */}
+      {/* Main Footer */}
+      <div className="container mx-auto px-4 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          {/* About */}
           <div>
-            <h3 className="font-bold mb-4 text-lg">Get to Know Us</h3>
-            <ul className="space-y-3 text-sm opacity-90">
+            <h3 className="font-semibold mb-4 text-base tracking-wide">
+              Get to Know Us
+            </h3>
+            <ul className="space-y-3 text-sm text-primary-foreground/80">
               <li>
-                <button 
-                  onClick={() => handleNavigation('/about')} 
-                  className="hover:underline hover:opacity-100 transition-opacity"
-                >
+                <button onClick={() => handleNavigation('/about')} className="hover:text-accent transition-colors">
                   About Us
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => handleNavigation('/about')} 
-                  className="hover:underline hover:opacity-100 transition-opacity"
-                >
+                <button onClick={() => handleNavigation('/about')} className="hover:text-accent transition-colors">
                   Our Story
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Contact Section */}
+          {/* Contact */}
           <div>
-            <h3 className="font-bold mb-4 text-lg">Connect with Us</h3>
-            <ul className="space-y-3 text-sm opacity-90">
-              <li>
-                <a 
-                  href="tel:+919876543210" 
-                  className="hover:underline hover:opacity-100 transition-opacity flex items-center gap-2"
-                >
-                  <Phone className="h-4 w-4" />
-                  +91 9876543210
-                </a>
+            <h3 className="font-semibold mb-4 text-base tracking-wide">
+              Connect with Us
+            </h3>
+            <ul className="space-y-3 text-sm text-primary-foreground/80">
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-accent" />
+                +91 98765 43210
               </li>
-              <li>
-                <a 
-                  href="mailto:contact@thesouthplate.com" 
-                  className="hover:underline hover:opacity-100 transition-opacity flex items-center gap-2"
-                >
-                  <Mail className="h-4 w-4" />
-                  contact@thesouthplate.com
-                </a>
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-accent" />
+                contact@thesouthplate.com
               </li>
             </ul>
           </div>
 
-          {/* Help Section */}
+          {/* Help */}
           <div>
-            <h3 className="font-bold mb-4 text-lg">Let Us Help You</h3>
-            <ul className="space-y-3 text-sm opacity-90">
+            <h3 className="font-semibold mb-4 text-base tracking-wide">
+              Let Us Help You
+            </h3>
+            <ul className="space-y-3 text-sm text-primary-foreground/80">
               <li>
-                <button 
-                  onClick={() => handleNavigation('/products')} 
-                  className="hover:underline hover:opacity-100 transition-opacity"
-                >
+                <button onClick={() => handleNavigation('/products')} className="hover:text-accent transition-colors">
                   Our Menu
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => handleNavigation('/contact')} 
-                  className="hover:underline hover:opacity-100 transition-opacity"
-                >
+                <button onClick={() => handleNavigation('/contact')} className="hover:text-accent transition-colors">
                   Contact Us
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => handleNavigation('/cart')} 
-                  className="hover:underline hover:opacity-100 transition-opacity"
-                >
+                <button onClick={() => handleNavigation('/cart')} className="hover:text-accent transition-colors">
                   Your Cart
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Hours & Location */}
+          {/* Visit */}
           <div>
-            <h3 className="font-bold mb-4 text-lg">Visit Us</h3>
-            <ul className="space-y-3 text-sm opacity-90">
-              <li className="flex items-start gap-2">
-                <Clock className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>Mon - Sun: 7AM - 11PM</span>
+            <h3 className="font-semibold mb-4 text-base tracking-wide">
+              Visit Us
+            </h3>
+            <ul className="space-y-3 text-sm text-primary-foreground/80">
+              <li className="flex gap-2">
+                <Clock className="h-4 w-4 text-accent mt-0.5" />
+                Mon – Sun: 7:00 AM – 11:00 PM
               </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>Koramangala, Bangalore</span>
+              <li className="flex gap-2">
+                <MapPin className="h-4 w-4 text-accent mt-0.5" />
+                Koramangala, Bengaluru
               </li>
             </ul>
           </div>
@@ -119,15 +102,10 @@ export function Footer() {
       </div>
 
       {/* Bottom */}
-      <div className="border-t border-primary-foreground/20 py-6">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <span className="font-bold text-xl">The South Plate</span>
-          </div>
-          <p className="text-sm opacity-70">
-            © 2024 The South Plate. Where Every Bite Tells a Story.
-          </p>
-        </div>
+      <div className="border-t border-primary-foreground/15 py-6 text-center">
+        <p className="text-sm text-primary-foreground/70">
+          © 2024 The South Plate · Where Every Bite Tells a Story
+        </p>
       </div>
     </footer>
   );
