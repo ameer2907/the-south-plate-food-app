@@ -19,7 +19,7 @@ export function AIChatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "Namaste! 🙏 Welcome to The South Plate! I'm Thali, your food assistant. How can I help you today? 🍛",
+      content: "Hey there! 👋 Welcome to The South Plate! I'm here to help you discover our delicious South Indian menu. What are you in the mood for today?",
     },
   ]);
   const [input, setInput] = useState('');
@@ -182,7 +182,7 @@ export function AIChatbot() {
                 className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-card text-card-foreground px-3 py-2 rounded-lg shadow-lg whitespace-nowrap text-sm font-medium border border-border"
               >
                 <Sparkles className="w-4 h-4 inline mr-1 text-accent" />
-                Ask Thali!
+                Ask Dishly!
               </motion.div>
             </motion.button>
           </motion.div>
@@ -214,7 +214,7 @@ export function AIChatbot() {
                   <span className="text-xl">🍛</span>
                 </motion.div>
                 <div>
-                  <h3 className="font-bold text-primary-foreground">Thali AI</h3>
+                  <h3 className="font-bold text-primary-foreground">Dishly AI</h3>
                   <div className="flex items-center gap-1">
                     <motion.div
                       animate={{ scale: [1, 1.2, 1] }}
