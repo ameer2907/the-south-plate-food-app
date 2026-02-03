@@ -29,24 +29,24 @@ export function Navbar() {
   const { itemCount } = useCart();
   const { user, isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
-  
+
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState('Select Location');
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // Filter menu items based on search query
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
     const query = searchQuery.toLowerCase();
-    return menuItems.filter(
-      (item) =>
-        item.name.toLowerCase().includes(query) ||
-        item.description.toLowerCase().includes(query)
-    ).slice(0, 6); // Limit to 6 results
+    return menuItems
+      .filter(
+        (item) =>
+          item.name.toLowerCase().includes(query) ||
+          item.description.toLowerCase().includes(query)
+      )
+      .slice(0, 6);
   }, [searchQuery]);
 
-  // Close search results when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
@@ -65,40 +65,36 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50">
-      {/* Main Header */}
+      {/* Top Header */}
       <div className="bg-header text-primary-foreground">
         <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center gap-4">
-            {/* Logo - Text Only */}
-            <Link to="/" className="flex items-center gap-2 shrink-0">
-              <div>
-                <h1 className="text-xl font-bold leading-tight">The South Plate</h1>
-                <p className="text-[10px] opacity-80">Taste the Tradition</p>
-              </div>
+          <div className="flex items-center gap-5">
+            {/* Logo */}
+            <Link to="/" className="shrink-0">
+              <h1 className="text-xl font-semibold tracking-wide">The South Plate</h1>
+              <p className="text-[10px] text-primary-foreground/70">
+                Taste the Tradition
+              </p>
             </Link>
 
-            {/* Delivery Location */}
+            {/* Location */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="hidden md:flex items-center gap-1 text-sm cursor-pointer hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded p-1">
+                <button className="hidden md:flex items-center gap-2 px-2 py-1 rounded hover:bg-primary-foreground/10 transition-colors">
                   <MapPin className="h-4 w-4" />
-                  <div>
-                    <p className="text-[10px] opacity-70">Deliver to</p>
-                    <p className="font-medium flex items-center gap-1">
-                      {selectedLocation.length > 15 
-                        ? selectedLocation.substring(0, 15) + '...' 
-                        : selectedLocation}
-                      <ChevronDown className="h-3 w-3" />
-                    </p>
-                  </div>
+                  <span className="text-sm font-medium">
+                    {selectedLocation.length > 18
+                      ? selectedLocation.slice(0, 18) + '...'
+                      : selectedLocation}
+                  </span>
+                  <ChevronDown className="h-3 w-3" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56 bg-popover">
+              <DropdownMenuContent className="bg-popover">
                 {locations.map((location) => (
                   <DropdownMenuItem
                     key={location}
                     onClick={() => setSelectedLocation(location)}
-                    className={selectedLocation === location ? 'bg-accent' : ''}
                   >
                     <MapPin className="h-4 w-4 mr-2" />
                     {location}
@@ -107,62 +103,50 @@ export function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Search Bar with Results */}
-            <div className="flex-1 max-w-2xl relative" ref={searchRef}>
+            {/* Search */}
+            <div ref={searchRef} className="flex-1 max-w-2xl relative">
               <div className="flex">
                 <Input
-                  type="search"
-                  placeholder="Search for dosas, idlis, vadas..."
+                  placeholder="Search dosas, idlis, meals..."
                   value={searchQuery}
                   onChange={(e) => {
                     setSearchQuery(e.target.value);
                     setShowSearchResults(true);
                   }}
                   onFocus={() => setShowSearchResults(true)}
-                  className="rounded-r-none bg-white text-foreground border-0 focus-visible:ring-accent"
+                  className="rounded-r-none bg-white text-foreground"
                 />
-                <Button className="rounded-l-none bg-accent hover:bg-accent/90 text-accent-foreground px-4">
+                <Button className="rounded-l-none bg-accent text-accent-foreground hover:bg-accent/90">
                   <Search className="h-5 w-5" />
                 </Button>
               </div>
 
-              {/* Search Results Dropdown */}
-              {showSearchResults && searchQuery.trim() && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-popover border border-border rounded-md shadow-lg z-50 max-h-80 overflow-y-auto">
-                  {searchResults.length > 0 ? (
-                    <>
-                      {searchResults.map((item) => (
-                        <button
-                          key={item.id}
-                          onClick={() => handleSearchItemClick(item.id)}
-                          className="w-full flex items-center gap-3 p-3 hover:bg-accent/10 transition-colors text-left"
-                        >
-                          <img
-                            src={item.image}
-                            alt={item.name}
-                            className="w-12 h-12 rounded object-cover"
-                          />
-                          <div className="flex-1 min-w-0">
-                            <p className="font-medium text-foreground truncate">{item.name}</p>
-                            <p className="text-sm text-muted-foreground truncate">
-                              {item.description}
-                            </p>
-                            <p className="text-sm font-semibold text-primary">₹{item.price}</p>
-                          </div>
-                        </button>
-                      ))}
-                      <Link
-                        to={`/products?search=${searchQuery}`}
-                        onClick={() => setShowSearchResults(false)}
-                        className="block p-3 text-center text-sm text-primary hover:bg-accent/10 border-t border-border"
+              {showSearchResults && searchQuery && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-popover border border-border rounded-md shadow-lg z-50">
+                  {searchResults.length ? (
+                    searchResults.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => handleSearchItemClick(item.id)}
+                        className="w-full flex gap-3 p-3 hover:bg-accent/10 text-left"
                       >
-                        See all results for "{searchQuery}"
-                      </Link>
-                    </>
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-12 h-12 rounded object-cover"
+                        />
+                        <div>
+                          <p className="font-medium">{item.name}</p>
+                          <p className="text-sm text-muted-foreground">
+                            ₹{item.price}
+                          </p>
+                        </div>
+                      </button>
+                    ))
                   ) : (
-                    <div className="p-4 text-center text-muted-foreground">
-                      No items found for "{searchQuery}"
-                    </div>
+                    <p className="p-4 text-sm text-muted-foreground text-center">
+                      No items found
+                    </p>
                   )}
                 </div>
               )}
@@ -171,19 +155,15 @@ export function Navbar() {
             {/* Account */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="hidden md:flex items-center gap-1 text-sm hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded p-2">
+                <button className="hidden md:flex items-center gap-2 px-3 py-2 rounded hover:bg-primary-foreground/10 transition-colors">
                   <User className="h-5 w-5" />
-                  <div className="text-left">
-                    <p className="text-[10px] opacity-70">
-                      {isAuthenticated ? `Hello, ${user?.name}` : 'Hello, Sign in'}
-                    </p>
-                    <p className="font-medium flex items-center gap-1">
-                      Account <ChevronDown className="h-3 w-3" />
-                    </p>
-                  </div>
+                  <span className="text-sm font-medium">
+                    {isAuthenticated ? user?.name : 'Account'}
+                  </span>
+                  <ChevronDown className="h-3 w-3" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48 bg-popover">
+              <DropdownMenuContent align="end">
                 {isAuthenticated ? (
                   <>
                     <DropdownMenuItem onClick={() => navigate('/cart')}>
@@ -211,41 +191,32 @@ export function Navbar() {
             {/* Cart */}
             <Link
               to="/cart"
-              className="flex items-center gap-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded p-2 relative"
+              className="flex items-center gap-2 px-3 py-2 rounded hover:bg-primary-foreground/10 transition-colors"
             >
-              <div className="relative">
-                <ShoppingCart className="h-6 w-6" />
-                {itemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                    {itemCount}
-                  </span>
-                )}
-              </div>
-              <span className="hidden md:inline font-medium">Cart</span>
+              <ShoppingCart className="h-6 w-6" />
+              {itemCount > 0 && (
+                <span className="bg-accent text-accent-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  {itemCount}
+                </span>
+              )}
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Secondary Nav */}
+      {/* Bottom Nav */}
       <div className="bg-header-secondary text-primary-foreground">
         <div className="container mx-auto px-4">
-          <nav className="flex items-center gap-1 py-2 text-sm overflow-x-auto">
-            {/* All Categories Dropdown */}
+          <nav className="flex gap-4 py-2 text-sm">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="flex items-center gap-1 px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
+                <button className="flex items-center gap-1 px-3 py-1 rounded hover:bg-primary-foreground/10">
                   <Menu className="h-4 w-4" />
-                  All Categories
+                  Categories
                   <ChevronDown className="h-3 w-3" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56 bg-popover">
-                <DropdownMenuItem onClick={() => navigate('/products')}>
-                  <span className="mr-2">📋</span>
-                  Full Menu
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
+              <DropdownMenuContent>
                 {Object.entries(categoryLabels).map(([key, label]) => (
                   <DropdownMenuItem
                     key={key}
@@ -257,13 +228,13 @@ export function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link to="/" className="px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
+            <Link to="/" className="px-3 py-1 rounded hover:bg-primary-foreground/10">
               Home
             </Link>
-            <Link to="/about" className="px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
-              About Us
+            <Link to="/about" className="px-3 py-1 rounded hover:bg-primary-foreground/10">
+              About
             </Link>
-            <Link to="/contact" className="px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
+            <Link to="/contact" className="px-3 py-1 rounded hover:bg-primary-foreground/10">
               Contact
             </Link>
           </nav>
