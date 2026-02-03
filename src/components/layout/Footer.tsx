@@ -51,22 +51,20 @@ export function Footer() {
             <ul className="space-y-3 text-sm opacity-90">
               <li>
                 <a 
-                  href="https://wa.me/919087223978" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  href="tel:+919876543210" 
                   className="hover:underline hover:opacity-100 transition-opacity flex items-center gap-2"
                 >
                   <Phone className="h-4 w-4" />
-                  +91 9087223978
+                  +91 9876543210
                 </a>
               </li>
               <li>
                 <a 
-                  href="mailto:ameermalikbahad07@gmail.com" 
+                  href="mailto:contact@thesouthplate.com" 
                   className="hover:underline hover:opacity-100 transition-opacity flex items-center gap-2"
                 >
                   <Mail className="h-4 w-4" />
-                  ameermalikbahad07@gmail.com
+                  contact@thesouthplate.com
                 </a>
               </li>
             </ul>
