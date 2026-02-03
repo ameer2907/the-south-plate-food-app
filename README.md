@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
+The South Plate – Restaurant Web Application
+A modern and responsive South Indian restaurant web application built using React and TypeScript.
+This project is designed to simulate a real-world food ordering and restaurant browsing experience with clean UI and smooth navigation.
 
-## Project info
+📌 Project Overview
+The South Plate is a frontend-focused restaurant web application inspired by popular food delivery platforms.
+It highlights modern UI/UX practices, scalable component structure, and real-world application flow.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This project was developed as part of my first internship project to demonstrate frontend development skills and practical React application architecture.
 
-## How can I edit this code?
+Note: This is a demonstration project created for learning and evaluation purposes.
+All brand names and contact details used in the UI are for realism only.
 
-There are several ways of editing your application.
+🎯 Key Features
+Responsive and modern UI design
+Home page with smooth navigation
+Food menu with categories and best sellers
+Search functionality with live results
+Cart management system
+Location selector for delivery
+Clean Navbar and Footer layout
+Single Page Application (SPA) routing
+🛠️ Tech Stack
+Frontend: React, TypeScript
+Styling: Tailwind CSS
+Routing: React Router DOM
+State Management: React Context API
+Icons: Lucide React
+Build Tool: Vite
+📂 Project Structure
+The application follows a clean and modular structure:
 
-**Use Lovable**
+the-south-plate-restaurant-app/ │ ├── src/ │ ├── components/ │ │ ├── layout/ │ │ ├── products/ │ │ └── ui/ │ ├── pages/ │ ├── context/ │ ├── data/ │ ├── assets/ │ └── main.tsx │ ├── public/ ├── index.html ├── package.json ├── vite.config.ts └── README.md
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+🚀 Installation & Setup
+To run this project locally:
 
-Changes made via Lovable will be committed automatically to this repo.
+Clone the repository
+git clone https://github.com/ameer2907/the-south-plate-restaurant-app.git
 
-**Use your preferred IDE**
+Navigate into the project folder
+cd the-south-plate-restaurant-app
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Install dependencies
+npm install
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Start the development server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+The application will run on:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+http://localhost:8080
 
-**Use GitHub Codespaces**
+📚 Learning Outcomes
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Hands-on experience with React and TypeScript
 
-## What technologies are used for this project?
+Understanding of SPA routing and component-based architecture
 
-This project is built with:
+Improved UI/UX design skills
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Real-world frontend project structure experience
 
-## How can I deploy this project?
+🔮 Future Enhancements
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Backend integration
 
-## Can I connect a custom domain to my Lovable project?
+User authentication and profiles
 
-Yes, you can!
+Online payment gateway
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Order tracking system
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Admin dashboard for menu management
+
+👤 Developer
+
+Ameer Malik Computer Science Engineering – Data Science & AI Dr. M.G.R Educational and Research Institute
+
+GitHub: https://github.com/ameer2907
+
+Email: ameermalikbahad07@gmail.com
+
+📄 License
+
+This project is created for educational and internship evaluation purposes
