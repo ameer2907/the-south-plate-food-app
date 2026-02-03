@@ -257,6 +257,9 @@ export function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            <Link to="/" className="px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
+              Home
+            </Link>
             <Link to="/about" className="px-3 py-1 hover:outline hover:outline-1 hover:outline-primary-foreground/50 rounded whitespace-nowrap">
               About Us
             </Link>
