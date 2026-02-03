@@ -48,8 +48,7 @@ Start the development server
 npm run dev
 
 The application will run on:
-
-http://localhost:8080
+https://the-south-plate-food-app.netlify.app/
 
 📚 Learning Outcomes
 
