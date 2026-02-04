@@ -1,66 +1,279 @@
 @tailwind base;
+
 @tailwind components;
+
 @tailwind utilities;
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+
+
 @layer base {
+
   :root {
-    /* ===== ENHANCED E-COMMERCE SYSTEM (FLIPKART INSPIRED) ===== */
-    
-    /* Pure, clean background with a hint of warmth/depth */
-    --background: 210 20% 96%;    /* #F0F2F5 - Distinct section separation */
-    --foreground: 222 47% 11%;   /* #0F172A - Deep navy for text */
 
-    /* Cards - White with subtle borders, not heavy shadows */
+    /* ===== PROFESSIONAL E-COMMERCE COLOR SYSTEM ===== */
+
+
+
+    /* Page background (MOST IMPORTANT CHANGE) */
+
+    --background: 210 20% 98%; /* #F5F7FA */
+
+    --foreground: 222 22% 15%; /* #0F172A */
+
+
+
+    /* Cards */
+
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
 
-    /* Brand Identity: The "Flipkart" Blue is punchy but professional */
-    --primary: 211 100% 50%;     /* #007BFF - Pure Professional Blue */
+    --card-foreground: 222 22% 15%;
+
+
+
+    --popover: 0 0% 100%;
+
+    --popover-foreground: 222 22% 15%;
+
+
+
+    /* Brand Blue (LIMITED USAGE) */
+
+    --primary: 213 90% 52%; /* #1F6FDB */
+
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary: Used for secondary buttons/tags */
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
 
-    /* Muted: For helpful/less important text */
-    --muted: 210 20% 98%;
-    --muted-foreground: 215 16% 47%;
 
-    /* Action Color: The "Buy Now" Orange/Yellow */
-    --accent: 36 100% 50%;       /* #FF9F00 - Flipkart Gold/Orange */
+    /* Neutral sections */
+
+    --secondary: 210 16% 96%;
+
+    --secondary-foreground: 222 22% 15%;
+
+
+
+    /* Muted text */
+
+    --muted: 210 16% 96%;
+
+    --muted-foreground: 215 16% 45%; /* #475569 */
+
+
+
+    /* CTA Orange (ONLY FOR BUTTONS) */
+
+    --accent: 32 100% 50%; /* #FF8A00 */
+
     --accent-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;       /* Very light borders */
-    --input: 214 32% 91%;
-    --ring: 211 100% 50%;
 
-    --radius: 0.25rem;           /* Sharper corners feel more "E-commerce Pro" */
 
-    /* Navigation Specifics */
-    --header-bg: 211 100% 50%;
-    --footer-bg: 222 47% 11%;
-    --footer-foreground: 210 20% 90%;
+    /* Destructive */
+
+    --destructive: 0 72% 51%;
+
+    --destructive-foreground: 0 0% 100%;
+
+
+
+    /* Borders & inputs */
+
+    --border: 214 20% 90%;
+
+    --input: 214 20% 90%;
+
+    --ring: 213 90% 52%;
+
+
+
+    --radius: 0.6rem;
+
+
+
+    /* Status */
+
+    --success: 142 71% 45%;
+
+    --warning: 38 92% 50%;
+
+
+
+    /* Header */
+
+    --header-bg: 213 90% 52%; /* keep blue here */
+
+    --header-secondary: 213 85% 45%;
+
+
+
+    /* Footer (DARK & PREMIUM) */
+
+    --footer-bg: 215 40% 12%; /* #0B1F33 */
+
+    --footer-foreground: 214 20% 85%; /* #CBD5E1 */
+
+
+
+    /* Sidebar */
+
+    --sidebar-background: 0 0% 100%;
+
+    --sidebar-foreground: 222 22% 15%;
+
+    --sidebar-primary: 213 90% 52%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 210 16% 96%;
+
+    --sidebar-accent-foreground: 222 22% 15%;
+
+    --sidebar-border: 214 20% 90%;
+
+    --sidebar-ring: 213 90% 52%;
+
   }
 
-  /* Dark Mode: Deep & Focused */
+
+
+  /* ===== DARK MODE ===== */
+
   .dark {
-    --background: 222 47% 4%;
-    --foreground: 210 20% 98%;
-    --card: 222 47% 7%;
-    --border: 222 47% 15%;
-    --primary: 211 100% 60%;
-    --muted-foreground: 215 20% 65%;
+
+    --background: 222 25% 10%;
+
+    --foreground: 210 20% 96%;
+
+
+
+    --card: 222 25% 13%;
+
+    --card-foreground: 210 20% 96%;
+
+
+
+    --popover: 222 25% 13%;
+
+    --popover-foreground: 210 20% 96%;
+
+
+
+    --primary: 213 90% 58%;
+
+    --primary-foreground: 0 0% 100%;
+
+
+
+    --secondary: 222 25% 18%;
+
+    --secondary-foreground: 210 20% 96%;
+
+
+
+    --muted: 222 25% 20%;
+
+    --muted-foreground: 215 15% 65%;
+
+
+
+    --accent: 32 100% 50%;
+
+    --accent-foreground: 0 0% 100%;
+
+
+
+    --border: 222 25% 22%;
+
+    --input: 222 25% 22%;
+
+    --ring: 213 90% 58%;
+
+
+
+    --footer-bg: 222 35% 8%;
+
+    --footer-foreground: 215 20% 80%;
+
   }
+
 }
+
+
 
 @layer base {
-  * { @apply border-border; }
-  body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
-    /* This ensures a smooth vertical flow */
-    -webkit-font-smoothing: antialiased;
+
+  * {
+
+    @apply border-border;
+
   }
+
+
+
+  body {
+
+    @apply bg-background text-foreground antialiased;
+
+    font-family: 'Inter', sans-serif;
+
+  }
+
 }
+
+
+
+/* ===== SUBTLE MOTION (KEEP CLEAN) ===== */
+
+@layer utilities {
+
+  .animate-fade-in {
+
+    animation: fadeIn 0.25s ease-out forwards;
+
+  }
+
+
+
+  .animate-slide-up {
+
+    animation: slideUp 0.3s ease-out forwards;
+
+  }
+
+
+
+  @keyframes fadeIn {
+
+    from { opacity: 0; }
+
+    to { opacity: 1; }
+
+  }
+
+
+
+  @keyframes slideUp {
+
+    from {
+
+      opacity: 0;
+
+      transform: translateY(6px);
+
+    }
+
+    to {
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+    }
+
+  }
+
+    }
