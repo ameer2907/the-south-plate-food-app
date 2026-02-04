@@ -8,6 +8,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { AIChatbot } from "./components/chat/AIChatbot";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail"; // You may need this for specific items
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
@@ -29,6 +30,8 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/products" element={<Products />} />
+              {/* FIXED: Dynamic route to prevent 404 on search clicks */}
+              <Route path="/products/:id" element={<Products />} /> 
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/login" element={<Login />} />
