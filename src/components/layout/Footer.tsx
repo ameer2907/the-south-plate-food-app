@@ -10,101 +10,95 @@ export function Footer() {
   };
 
   return (
-    /* Changed to custom footer-bg for a professional premium look */
     <footer className="bg-[#0B1F33] text-white mt-auto border-t border-white/5">
-      {/* Back to top - Clean & Flat */}
+      {/* Back to top - Industrial Clean Style */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="w-full py-3 bg-[#1F6FDB]/10 hover:bg-[#1F6FDB]/20 text-blue-400 text-xs font-medium uppercase tracking-widest transition-all"
+        className="w-full py-4 bg-white/5 hover:bg-white/10 text-white/60 text-[10px] font-black uppercase tracking-[0.3em] transition-all border-b border-white/5"
       >
         Back to top
       </button>
 
-      {/* Main Footer */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* About */}
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-4 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
+          {/* About Column */}
           <div>
-            <h3 className="font-bold mb-6 text-sm uppercase tracking-wider text-white">
-              Get to Know Us
+            <h3 className="font-black mb-8 text-xs uppercase tracking-[0.2em] text-[#ff9f00]">
+              The Company
             </h3>
-            <ul className="space-y-4 text-sm text-slate-400">
+            <ul className="space-y-4 text-sm text-slate-400 font-medium">
               <li>
-                <button onClick={() => handleNavigation('/about')} className="hover:text-white transition-colors">
-                  About Us
-                </button>
+                <button onClick={() => handleNavigation('/about')} className="hover:text-white transition-colors">About The South Plate</button>
               </li>
               <li>
-                <button onClick={() => handleNavigation('/about')} className="hover:text-white transition-colors">
-                  Our Story
-                </button>
+                <button onClick={() => handleNavigation('/about')} className="hover:text-white transition-colors">Our Story</button>
+              </li>
+              <li className="text-xs pt-4 border-t border-white/5 opacity-50">Owned by Evolve Solutions</li>
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div>
+            <h3 className="font-black mb-8 text-xs uppercase tracking-[0.2em] text-[#ff9f00]">
+              Support
+            </h3>
+            <ul className="space-y-5 text-sm text-slate-400 font-medium">
+              <li className="flex items-center gap-4 group cursor-pointer">
+                <div className="p-2 bg-white/5 rounded-sm group-hover:bg-[#2874f0] transition-colors">
+                  <Phone className="h-4 w-4 text-white" />
+                </div>
+                <span>+91 90872 23978</span>
+              </li>
+              <li className="flex items-center gap-4 group cursor-pointer">
+                <div className="p-2 bg-white/5 rounded-sm group-hover:bg-[#2874f0] transition-colors">
+                  <Mail className="h-4 w-4 text-white" />
+                </div>
+                <span className="text-[11px] break-all">evolve.southplate@gmail.com</span>
               </li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Help Column */}
           <div>
-            <h3 className="font-bold mb-6 text-sm uppercase tracking-wider text-white">
-              Connect with Us
+            <h3 className="font-black mb-8 text-xs uppercase tracking-[0.2em] text-[#ff9f00]">
+              Quick Links
             </h3>
-            <ul className="space-y-4 text-sm text-slate-400">
-              <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-[#FF8A00]" />
-                +91 90872 23978
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-4 w-4 text-[#FF8A00]" />
-                evolvesolutionpvtltd@gmail.com
-              </li>
+            <ul className="space-y-4 text-sm text-slate-400 font-medium">
+              <li><button onClick={() => handleNavigation('/products')} className="hover:text-white transition-colors">Full Menu</button></li>
+              <li><button onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Contact Support</button></li>
+              <li><button onClick={() => handleNavigation('/cart')} className="hover:text-white transition-colors">View Cart</button></li>
             </ul>
           </div>
 
-          {/* Help */}
+          {/* Visit Column */}
           <div>
-            <h3 className="font-bold mb-6 text-sm uppercase tracking-wider text-white">
-              Let Us Help You
+            <h3 className="font-black mb-8 text-xs uppercase tracking-[0.2em] text-[#ff9f00]">
+              Location
             </h3>
-            <ul className="space-y-4 text-sm text-slate-400">
-              <li>
-                <button onClick={() => handleNavigation('/products')} className="hover:text-white transition-colors">
-                  Our Menu
-                </button>
+            <ul className="space-y-5 text-sm text-slate-400 font-medium">
+              <li className="flex gap-4">
+                <Clock className="h-5 w-5 text-white/40 mt-0.5" />
+                <div>
+                  <p className="text-white text-xs font-bold uppercase tracking-tighter">Hours</p>
+                  <p className="text-[11px]">7:00 AM - 11:00 PM</p>
+                </div>
               </li>
-              <li>
-                <button onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">
-                  Contact Us
-                </button>
-              </li>
-              <li>
-                <button onClick={() => handleNavigation('/cart')} className="hover:text-white transition-colors">
-                  Your Cart
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Visit */}
-          <div>
-            <h3 className="font-bold mb-6 text-sm uppercase tracking-wider text-white">
-              Visit Us
-            </h3>
-            <ul className="space-y-4 text-sm text-slate-400">
-              <li className="flex gap-3">
-                <Clock className="h-4 w-4 text-[#FF8A00] mt-0.5" />
-                Mon - Sun: 7:00 AM - 11:00 PM
-              </li>
-              <li className="flex gap-3">
-                <MapPin className="h-4 w-4 text-[#FF8A00] mt-0.5" />
-                Koramangala, Bengaluru
+              <li className="flex gap-4">
+                <MapPin className="h-5 w-5 text-white/40 mt-0.5" />
+                <div>
+                  <p className="text-white text-xs font-bold uppercase tracking-tighter">HQ</p>
+                  <p className="text-[11px]">Koramangala, Bengaluru</p>
+                </div>
               </li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* Bottom Copyright */}
-      <div className="border-t border-white/5 py-8 text-center bg-black/20">
-        <p className="text-xs text-slate-500 uppercase tracking-widest">
+      {/* Bottom Copyright Bar */}
+      <div className="border-t border-white/5 py-10 text-center bg-black/40">
+        <p className="text-[10px] text-slate-500 uppercase tracking-[0.4em] font-black">
           © 2026 Evolve Solutions - The South Plate. All rights reserved.
         </p>
       </div>
