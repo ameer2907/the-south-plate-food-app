@@ -1,5 +1,6 @@
 import { MenuItem } from '@/types/hotel';
 
+// Asset Imports
 import masalaDosa from '@/assets/food/masala-dosa.jpg';
 import mysoreDosa from '@/assets/food/mysore-dosa.jpg';
 import ravaDosa from '@/assets/food/rava-dosa.jpg';
@@ -36,16 +37,6 @@ import payasam from '@/assets/food/payasam.jpg';
 import mysorePak from '@/assets/food/mysore-pak.jpg';
 import coconutBurfi from '@/assets/food/coconut-burfi.jpg';
 
-export interface MenuItem {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  category: string;
-  isPopular?: boolean;
-}
-
 export const categoryLabels: Record<string, string> = {
   dosa: "Dosas",
   idli: "Idlis",
@@ -58,61 +49,40 @@ export const categoryLabels: Record<string, string> = {
 };
 
 export const menuItems: MenuItem[] = [
-  // Existing Items (Dosas, Idlis, Rice)
-  {
-    id: 'd1',
-    name: 'Ghee Podi Masala Dosa',
-    description: 'Crispy dosa with spicy podi and clarified butter.',
-    price: 145,
-    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500',
-    category: 'dosa',
-    isPopular: true
-  },
-  {
-    id: 'r1',
-    name: 'Luxury Sambar Rice',
-    description: 'Aromatic rice cooked with fresh vegetables and homemade sambar.',
-    price: 160,
-    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500',
-    category: 'rice',
-    isPopular: true
-  },
+  // DOSAS
+  { id: 'd1', name: 'Masala Dosa', description: 'Classic spiced potato filling.', price: 120, image: masalaDosa, category: 'dosa', isPopular: true },
+  { id: 'd2', name: 'Mysore Masala Dosa', description: 'Spicy red chutney lining.', price: 140, image: mysoreDosa, category: 'dosa' },
+  { id: 'd3', name: 'Ghee Roast Dosa', description: 'Crispy and buttery.', price: 130, image: gheeRoastDosa, category: 'dosa' },
+  { id: 'd4', name: 'Onion Dosa', description: 'Topped with fresh onions.', price: 110, image: onionDosa, category: 'dosa' },
+  
+  // IDLIS
+  { id: 'i1', name: 'Idli Sambar', description: 'Two fluffy steamed rice cakes.', price: 60, image: idliSambar, category: 'idli', isPopular: true },
+  { id: 'i2', name: 'Podi Idli', description: 'Tossed in spicy gunpowder.', price: 85, image: podiIdli, category: 'idli' },
+  { id: 'i3', name: 'Mini Idli', description: '14 small idlis in sambar.', price: 95, image: miniIdli, category: 'idli' },
 
-  // NEW ITEMS TO FIX ZERO COUNTS
-  {
-    id: 'curry-1',
-    name: 'Vegetable Kurma',
-    category: 'curries',
-    price: 180,
-    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=500',
-    description: 'Luxury mixed vegetable curry prepared with fresh coconut milk.',
-    isPopular: true
-  },
-  {
-    id: 'snack-1',
-    name: 'Medhu Vada (2 pcs)',
-    category: 'snacks',
-    price: 85,
-    image: 'https://images.unsplash.com/photo-1606491956689-2ea8c5383c82?w=500',
-    description: 'Crispy deep-fried lentil doughnuts served with coconut chutney.',
-    isPopular: false
-  },
-  {
-    id: 'dessert-1',
-    name: 'Elaneer Payasam',
-    category: 'desserts',
-    price: 120,
-    image: 'https://images.unsplash.com/photo-1589119634710-86339170e93a?w=500',
-    description: 'Tender coconut kheer - a luxury South Indian delicacy.',
-    isPopular: true
-  },
-  {
-    id: 'bev-1',
-    name: 'Authentic Filter Coffee',
-    category: 'beverages',
-    price: 45,
-    image: 'https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=500',
-    description: 'Traditional South Indian frothy coffee.',
-    isPopular: true
-  }
+  // VADAS
+  { id: 'v1', name: 'Medu Vada', description: 'Crispy lentil doughnuts.', price: 70, image: meduVada, category: 'vada', isPopular: true },
+  { id: 'v2', name: 'Sambar Vada', description: 'Soaked in hot sambar.', price: 85, image: sambarVada, category: 'vada' },
+
+  // RICE ITEMS
+  { id: 'r1', name: 'Bisi Bele Bath', description: 'Luxury Karnataka style rice.', price: 150, image: bisiBeleBath, category: 'rice', isPopular: true },
+  { id: 'r2', name: 'Curd Rice', description: 'Cool and creamy.', price: 90, image: curdRice, category: 'rice' },
+
+  // CURRIES (Fixing the 0 Count)
+  { id: 'c1', name: 'Mixed Vegetable Sambar', description: 'Hearty lentil stew.', price: 110, image: sambar, category: 'curries' },
+  { id: 'c2', name: 'Traditional Rasam', description: 'Spicy tamarind soup.', price: 80, image: rasam, category: 'curries' },
+  { id: 'c3', name: 'Kerala Avial', description: 'Coconut based veggie mix.', price: 140, image: avial, category: 'curries' },
+
+  // SNACKS (Fixing the 0 Count)
+  { id: 's1', name: 'Ven Pongal', description: 'Ghee tempered rice & lentils.', price: 100, image: pongal, category: 'snacks', isPopular: true },
+  { id: 's2', name: 'Rava Upma', description: 'Semolina savory porridge.', price: 80, image: upma, category: 'snacks' },
+  { id: 's3', name: 'Onion Uttapam', description: 'Savory thick pancake.', price: 115, image: uttapam, category: 'snacks' },
+
+  // BEVERAGES
+  { id: 'b1', name: 'Filter Coffee', description: 'Frothy South Indian coffee.', price: 45, image: filterCoffee, category: 'beverages', isPopular: true },
+  { id: 'b2', name: 'Mango Lassi', description: 'Sweet and creamy.', price: 90, image: mangoLassi, category: 'beverages' },
+
+  // DESSERTS
+  { id: 'de1', name: 'Elaneer Payasam', description: 'Tender coconut pudding.', price: 120, image: payasam, category: 'desserts', isPopular: true },
+  { id: 'de2', name: 'Mysore Pak', description: 'Rich gram flour fudge.', price: 50, image: mysorePak, category: 'desserts' }
 ];
