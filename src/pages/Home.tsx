@@ -7,53 +7,53 @@ import { ArrowRight, Truck, Shield, Clock, Award } from 'lucide-react';
 
 export default function Home() {
   const popularItems = menuItems.filter((item) => item.isPopular);
-  const dosas = menuItems.filter((item) => item.category === 'dosa').slice(0, 4);
 
   return (
     <MainLayout>
-      {/* Hero Banner - Blue Gradient Branding */}
-      <div className="bg-gradient-to-r from-[#2874f0] to-[#1a5fcd] text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-12">
+      {/* 1. HERO BANNER - Balanced White & Blue Style */}
+      <div className="bg-white py-20 relative overflow-hidden">
+        {/* Subtle Brand Blue accent to break the white */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-[#2874f0]/5 rounded-l-full hidden lg:block"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-6xl font-[900] mb-6 tracking-tighter leading-tight italic">
+              <h1 className="text-5xl md:text-7xl font-[900] text-slate-900 mb-6 tracking-tighter italic leading-tight">
                 AUTHENTIC FLAVORS, <br />
-                <span className="text-[#ff9f00]">DELIVERED TO YOU.</span>
+                <span className="text-[#2874f0]">DELIVERED TO YOU.</span>
               </h1>
-              <p className="text-lg text-white/90 mb-8 max-w-lg leading-relaxed font-semibold uppercase tracking-wide">
-                Experience Luxury South Indian Dining. Prepared with premium 
-                ingredients and delivered fresh to your door.
+              <p className="text-xl text-slate-500 mb-10 max-w-xl leading-relaxed font-medium">
+                Experience luxury South Indian dining. Prepared with premium ingredients 
+                and delivered fresh to your doorstep in Chennai.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <Button asChild size="xl" className="bg-[#ff9f00] hover:bg-[#f39700] text-white rounded-sm px-10 shadow-xl transition-all border-none font-black uppercase tracking-widest">
-                  <Link to="/products" className="flex items-center gap-2">
-                    Order Now <ArrowRight className="h-5 w-5" />
-                  </Link>
+                <Button asChild size="xl" className="bg-[#ff9f00] hover:bg-[#f39700] text-white font-black px-12 rounded-sm uppercase tracking-widest shadow-xl transition-transform hover:scale-105">
+                  <Link to="/products">Order Now</Link>
                 </Button>
-                <Button asChild size="xl" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 rounded-sm font-black uppercase tracking-widest">
+                <Button asChild variant="outline" size="xl" className="border-slate-200 text-slate-600 font-black px-12 rounded-sm uppercase tracking-widest">
                   <Link to="/about">Learn More</Link>
                 </Button>
               </div>
             </div>
-            
-            <div className="hidden md:block">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-white/10 rounded-full blur-3xl"></div>
-                <div className="relative w-72 h-72 rounded-full border-4 border-white/20 flex items-center justify-center shadow-2xl backdrop-blur-md">
-                   <div className="text-center">
-                     <Award className="h-16 w-16 text-[#ff9f00] mx-auto mb-2 drop-shadow-lg" />
-                     <span className="block font-[900] text-white text-2xl uppercase tracking-tighter">Premium</span>
-                     <span className="text-sm text-white/80 font-bold tracking-widest uppercase">Luxury Quality</span>
-                   </div>
-                </div>
+
+            {/* OG Premium Badge - Blue Circle Mix */}
+            <div className="relative">
+              <div className="w-72 h-72 md:w-80 md:h-80 rounded-full bg-[#2874f0] flex flex-col items-center justify-center text-center shadow-2xl border-8 border-white animate-fade-in">
+                <Award className="h-16 w-16 text-[#ff9f00] mb-2 drop-shadow-lg" />
+                <span className="block font-black text-white text-3xl uppercase tracking-tighter">Premium</span>
+                <span className="text-xs text-white/80 font-bold tracking-widest uppercase">Luxury Quality</span>
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg border border-slate-100">
+                <span className="text-[#ff9f00] font-black text-xl italic">20% OFF</span>
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">First Order</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Features Bar - White & Minimalist */}
-      <div className="bg-white border-b border-slate-200 py-10 shadow-sm">
+      {/* 2. FEATURES BAR - Minimalist Professional */}
+      <div className="bg-[#f8fafc] border-y border-slate-100 py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <FeatureItem icon={<Truck />} title="Free Delivery" desc="Above ₹499" />
@@ -64,9 +64,49 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Categories & Best Sellers sections remain same as previous structure but with refined spacing */}
+      {/* 3. CATEGORIES SECTION */}
+      <div className="container mx-auto px-4 py-20">
+        <div className="flex items-center justify-between mb-12">
+          <h2 className="text-3xl font-black text-slate-900 uppercase tracking-tighter italic">Explore Menu</h2>
+          <div className="h-1 flex-1 bg-slate-100 mx-8 hidden sm:block rounded-full"></div>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-6">
+          {Object.entries(categoryLabels).map(([key, label]) => (
+            <Link
+              key={key}
+              to={`/products?category=${key}`}
+              className="group flex flex-col items-center gap-4 p-6 bg-white rounded-md border border-slate-100 hover:border-[#2874f0] hover:shadow-xl transition-all transform hover:-translate-y-1"
+            >
+              <div className="w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#2874f0] shadow-inner transition-all">
+                <span className="text-[#2874f0] group-hover:text-white font-black text-lg">{label.charAt(0)}</span>
+              </div>
+              <span className="text-[11px] font-black uppercase tracking-widest text-slate-500 group-hover:text-[#2874f0] text-center">{label}</span>
+            </Link>
+          ))}
+        </div>
+      </div>
 
-      {/* CTA Banner - Premium Midnight Navy (No More Heavy Orange) */}
+      {/* 4. BEST SELLERS SECTION */}
+      <div className="bg-slate-50 py-24">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between mb-12">
+            <div className="flex items-center gap-4">
+              <h2 className="text-4xl font-black text-slate-900 uppercase tracking-tighter italic">Best Sellers</h2>
+              <span className="bg-[#ff9f00] text-white text-[11px] font-black px-3 py-1 rounded-sm shadow-sm animate-pulse">HOT DEALS</span>
+            </div>
+            <Link to="/products" className="text-[#2874f0] text-sm font-black flex items-center gap-2 hover:translate-x-1 transition-transform group">
+              VIEW ALL <ArrowRight className="h-5 w-5 bg-[#2874f0] text-white rounded-full p-1" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {popularItems.slice(0, 4).map((item) => (
+              <ProductCard key={item.id} item={item} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 5. CTA BANNER - Premium Midnight Navy */}
       <div className="bg-[#0B1F33] py-24 relative overflow-hidden text-center">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#2874f0]/10 blur-[120px] rounded-full"></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -89,7 +129,7 @@ export default function Home() {
 function FeatureItem({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
   return (
     <div className="flex flex-col items-center md:flex-row gap-4 text-center md:text-left group">
-      <div className="p-3 bg-slate-50 rounded-lg group-hover:bg-[#2874f0] group-hover:text-white transition-all text-[#2874f0]">
+      <div className="p-3 bg-white rounded-lg shadow-sm group-hover:bg-[#2874f0] group-hover:text-white transition-all text-[#2874f0]">
         {icon}
       </div>
       <div>
