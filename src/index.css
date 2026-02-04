@@ -2,92 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
-    /* Page background & text */
+    /* Page background - Clean & Professional White */
     --background: 210 20% 98%; 
     --foreground: 222 22% 15%;
 
-    /* Brand Blue for the Header & Primary Actions */
+    /* Brand Blue - High Impact Navigation & Primary Buttons */
     --primary: 213 90% 52%; 
     --primary-foreground: 0 0% 100%;
 
-    /* Header specific colors */
-    --header-bg: 213 90% 52%;
-    --header-secondary: 213 85% 45%;
-
-    /* CTA Orange for the "Hungry? Order Now" section */
+    /* CTA Orange - Strictly for small highlights & Buttons */
     --accent: 32 100% 50%; 
     --accent-foreground: 0 0% 100%;
 
-    /* Cards & Popovers */
+    /* Card & UI Surfaces */
     --card: 0 0% 100%;
     --card-foreground: 222 22% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 22% 15%;
-
-    /* Neutral & Muted */
-    --secondary: 210 16% 96%;
-    --secondary-foreground: 222 22% 15%;
-    --muted: 210 16% 96%;
-    --muted-foreground: 215 16% 45%;
-
-    /* Status & Feedback */
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
-    --success: 142 71% 45%;
-    --warning: 38 92% 50%;
-
-    /* Borders & UI Elements */
     --border: 214 20% 90%;
-    --input: 214 20% 90%;
-    --ring: 213 90% 52%;
-    --radius: 0.6rem;
+    --radius: 0.4rem;
 
-    /* Footer (DARK & PREMIUM) */
-    --footer-bg: 215 40% 12%; 
+    /* Footer - Deep Midnight (Luxury Feel) */
+    --footer-bg: 222 47% 11%; 
     --footer-foreground: 214 20% 85%;
-
-    /* Sidebar */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222 22% 15%;
-    --sidebar-primary: 213 90% 52%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 16% 96%;
-    --sidebar-accent-foreground: 222 22% 15%;
-    --sidebar-border: 214 20% 90%;
-    --sidebar-ring: 213 90% 52%;
-  }
-
-  .dark {
-    --background: 222 25% 10%;
-    --foreground: 210 20% 96%;
-    --card: 222 25% 13%;
-    --card-foreground: 210 20% 96%;
-    --popover: 222 25% 13%;
-    --popover-foreground: 210 20% 96%;
-    --primary: 213 90% 58%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 222 25% 18%;
-    --secondary-foreground: 210 20% 96%;
-    --muted: 222 25% 20%;
-    --muted-foreground: 215 15% 65%;
-    --accent: 32 100% 50%;
-    --accent-foreground: 0 0% 100%;
-    --border: 222 25% 22%;
-    --input: 222 25% 22%;
-    --ring: 213 90% 58%;
-    --footer-bg: 222 35% 8%;
-    --footer-foreground: 215 20% 80%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
@@ -95,24 +39,11 @@
 }
 
 @layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 0.25s ease-out forwards;
-  }
-  .animate-slide-up {
-    animation: slideUp 0.3s ease-out forwards;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(6px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .animate-fade-in { animation: fadeIn 0.25s ease-out forwards; }
+  .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideUp { 
+    from { opacity: 0; transform: translateY(6px); } 
+    to { opacity: 1; transform: translateY(0); } 
   }
 }
