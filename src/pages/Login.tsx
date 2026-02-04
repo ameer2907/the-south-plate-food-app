@@ -42,27 +42,30 @@ export default function Login() {
     <MainLayout>
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-md mx-auto">
-          <div className="bg-card rounded-lg border border-border p-8">
-            <h1 className="text-2xl font-bold text-center mb-2">Sign In</h1>
-            <p className="text-muted-foreground text-center mb-6">
-              Welcome back to Annapurna
+          <div className="bg-white rounded-sm border border-slate-100 p-8 shadow-xl">
+            {/* Updated Branding */}
+            <h1 className="text-3xl font-[900] text-center mb-2 tracking-tighter italic text-[#2874f0]">
+              THE SOUTH <span className="text-[#ff9f00]">PLATE</span>
+            </h1>
+            <p className="text-slate-500 font-bold uppercase tracking-widest text-xs text-center mb-8">
+              Official Site Login
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <Label htmlFor="email">Email Address</Label>
+                <Label htmlFor="email" className="font-bold text-slate-700">Email Address</Label>
                 <Input
                   id="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="mt-1"
+                  className="mt-1 h-11 focus:ring-[#2874f0]"
                 />
               </div>
 
               <div>
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password" title="Password must be at least 6 characters" className="font-bold text-slate-700">Password</Label>
                 <div className="relative mt-1">
                   <Input
                     id="password"
@@ -70,40 +73,40 @@ export default function Login() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
+                    className="h-11 focus:ring-[#2874f0]"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#2874f0]"
                   >
                     {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
                 </div>
               </div>
 
+              {/* High Contrast Blue Button */}
               <Button
                 type="submit"
-                variant="accent"
-                size="lg"
-                className="w-full"
                 disabled={isLoading}
+                className="w-full bg-[#2874f0] hover:bg-[#1a5fcd] h-12 font-black uppercase tracking-widest text-white shadow-lg"
               >
                 {isLoading ? 'Signing in...' : 'Sign In'}
               </Button>
             </form>
 
-            <div className="mt-6 text-center">
-              <p className="text-sm text-muted-foreground">
+            <div className="mt-6 text-center border-t border-slate-50 pt-6">
+              <p className="text-sm text-slate-500 font-medium">
                 Don't have an account?{' '}
-                <Link to="/register" className="text-primary font-medium hover:underline">
+                <Link to="/register" className="text-[#2874f0] font-bold hover:underline">
                   Create one
                 </Link>
               </p>
             </div>
           </div>
 
-          <p className="text-xs text-center text-muted-foreground mt-4">
-            By signing in, you agree to our Terms of Service and Privacy Policy
+          <p className="text-[10px] uppercase tracking-tighter text-center text-slate-400 mt-6 font-bold">
+            © 2026 Evolve Solutions - The South Plate
           </p>
         </div>
       </div>
