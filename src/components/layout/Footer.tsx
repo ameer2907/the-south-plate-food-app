@@ -25,20 +25,20 @@ export function Footer() {
           {/* About Column */}
           <div>
             <h3 className="font-black mb-8 text-xs uppercase tracking-[0.2em] text-[#ff9f00]">
-              The Company
+              THE SOUTH PLATE
             </h3>
             <ul className="space-y-4 text-sm text-slate-400 font-medium">
               <li>
-                <button onClick={() => handleNavigation('/about')} className="hover:text-white transition-colors">About The South Plate</button>
+                <button onClick={() => handleNavigation('/about')} className="hover:text-white transition-colors">About Us</button>
               </li>
               <li>
-                <button onClick={() => handleNavigation('/about')} className="hover:text-white transition-colors">Our Story</button>
+                <button onClick={() => handleNavigation('/about')} className="hover:text-white transition-colors">Luxury Dining Story</button>
               </li>
-              <li className="text-xs pt-4 border-t border-white/5 opacity-50">Owned by Evolve Solutions</li>
+              <li className="text-xs pt-4 border-t border-white/5 opacity-50 uppercase tracking-tighter">Official Site of Evolve Solutions</li>
             </ul>
           </div>
 
-          {/* Contact Column */}
+          {/* Contact Column - UPDATED EMAIL */}
           <div>
             <h3 className="font-black mb-8 text-xs uppercase tracking-[0.2em] text-[#ff9f00]">
               Support
@@ -54,7 +54,7 @@ export function Footer() {
                 <div className="p-2 bg-white/5 rounded-sm group-hover:bg-[#2874f0] transition-colors">
                   <Mail className="h-4 w-4 text-white" />
                 </div>
-                <span className="text-[11px] break-all">evolve.southplate@gmail.com</span>
+                <span className="text-[11px] break-all">evolvesolution20@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -65,30 +65,30 @@ export function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-4 text-sm text-slate-400 font-medium">
-              <li><button onClick={() => handleNavigation('/products')} className="hover:text-white transition-colors">Full Menu</button></li>
+              <li><button onClick={() => handleNavigation('/products')} className="hover:text-white transition-colors">Browse Menu</button></li>
               <li><button onClick={() => handleNavigation('/contact')} className="hover:text-white transition-colors">Contact Support</button></li>
-              <li><button onClick={() => handleNavigation('/cart')} className="hover:text-white transition-colors">View Cart</button></li>
+              <li><button onClick={() => handleNavigation('/cart')} className="hover:text-white transition-colors">My Cart</button></li>
             </ul>
           </div>
 
-          {/* Visit Column */}
+          {/* Visit Column - UPDATED ADDRESS */}
           <div>
             <h3 className="font-black mb-8 text-xs uppercase tracking-[0.2em] text-[#ff9f00]">
-              Location
+              Visit Us
             </h3>
             <ul className="space-y-5 text-sm text-slate-400 font-medium">
               <li className="flex gap-4">
                 <Clock className="h-5 w-5 text-white/40 mt-0.5" />
                 <div>
-                  <p className="text-white text-xs font-bold uppercase tracking-tighter">Hours</p>
+                  <p className="text-white text-xs font-bold uppercase tracking-tighter">Operating Hours</p>
                   <p className="text-[11px]">7:00 AM - 11:00 PM</p>
                 </div>
               </li>
               <li className="flex gap-4">
                 <MapPin className="h-5 w-5 text-white/40 mt-0.5" />
                 <div>
-                  <p className="text-white text-xs font-bold uppercase tracking-tighter">HQ</p>
-                  <p className="text-[11px]">Koramangala, Bengaluru</p>
+                  <p className="text-white text-xs font-bold uppercase tracking-tighter">HQ - Bangalore</p>
+                  <p className="text-[11px]">100 Feet Rd, Koramangala, Bengaluru, KA</p>
                 </div>
               </li>
             </ul>
