@@ -44,7 +44,7 @@ export default function Contact() {
   return (
     <MainLayout>
       {/* Hero */}
-      <div className="bg-header text-primary-foreground py-16">
+      <div className="bg-primary text-primary-foreground py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
@@ -150,8 +150,7 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold mb-1">Phone</h3>
                   <p className="text-muted-foreground">
-                    +91 98765 43210<br />
-                    +91 98765 43211
+                    +91 90872 23978
                   </p>
                 </div>
               </div>
@@ -163,8 +162,7 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold mb-1">Email</h3>
                   <p className="text-muted-foreground">
-                    info@annapurna.com<br />
-                    support@annapurna.com
+                    evolvesolutionpvtltd@gmail.com
                   </p>
                 </div>
               </div>

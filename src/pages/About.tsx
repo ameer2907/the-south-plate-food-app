@@ -5,10 +5,9 @@ export default function About() {
   return (
     <MainLayout>
       {/* Hero */}
-      <div className="bg-header text-primary-foreground py-16">
+      <div className="bg-primary text-primary-foreground py-16">
         <div className="container mx-auto px-4 text-center">
-          <span className="text-6xl mb-4 block">🍽️</span>
-          <h1 className="text-4xl font-bold mb-4">About The South Plate</h1>
+          <h1 className="text-4xl font-bold mb-4">About Evolve Solutions - The South Plate</h1>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
             Crafting Authentic South Indian Flavors Since 2010
           </p>
@@ -21,8 +20,8 @@ export default function About() {
           <h2 className="text-3xl font-bold mb-6 text-center">Our Story</h2>
           <div className="prose prose-lg text-muted-foreground mx-auto">
             <p className="mb-4">
-              The South Plate was born from a passion to share the rich culinary heritage 
-              of South India with the world. We believe food is more than sustenance—it's 
+              Evolve Solutions - The South Plate was born from a passion to share the rich culinary heritage 
+              of South India with the world. We believe food is more than sustenance - it's 
               an experience that connects generations and cultures.
             </p>
             <p className="mb-4">
@@ -89,7 +88,9 @@ export default function About() {
         <h2 className="text-3xl font-bold mb-10 text-center">Our Values</h2>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-card rounded-lg border border-border p-6 text-center">
-            <span className="text-4xl mb-4 block">🌿</span>
+            <div className="w-16 h-16 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-4">
+              <span className="text-success text-2xl font-bold">V</span>
+            </div>
             <h3 className="text-xl font-bold mb-2">100% Vegetarian</h3>
             <p className="text-muted-foreground">
               We are committed to serving pure vegetarian food, prepared in a 
@@ -97,7 +98,9 @@ export default function About() {
             </p>
           </div>
           <div className="bg-card rounded-lg border border-border p-6 text-center">
-            <span className="text-4xl mb-4 block">🍃</span>
+            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <span className="text-primary text-2xl font-bold">F</span>
+            </div>
             <h3 className="text-xl font-bold mb-2">Fresh Ingredients</h3>
             <p className="text-muted-foreground">
               We source the freshest ingredients daily, ensuring every dish 
@@ -105,7 +108,9 @@ export default function About() {
             </p>
           </div>
           <div className="bg-card rounded-lg border border-border p-6 text-center">
-            <span className="text-4xl mb-4 block">👨‍🍳</span>
+            <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+              <span className="text-accent text-2xl font-bold">T</span>
+            </div>
             <h3 className="text-xl font-bold mb-2">Traditional Recipes</h3>
             <p className="text-muted-foreground">
               Our recipes have been passed down through generations, preserving 

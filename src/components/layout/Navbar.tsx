@@ -66,14 +66,14 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50">
       {/* Top Header */}
-      <div className="bg-header text-primary-foreground">
+      <div className="bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center gap-5">
             {/* Logo */}
             <Link to="/" className="shrink-0">
-              <h1 className="text-xl font-semibold tracking-wide">The South Plate</h1>
-              <p className="text-[10px] text-primary-foreground/70">
-                Taste the Tradition
+              <h1 className="text-lg font-bold tracking-wide">Evolve Solutions</h1>
+              <p className="text-[10px] text-primary-foreground/80">
+                The South Plate
               </p>
             </Link>
 
@@ -114,7 +114,7 @@ export function Navbar() {
                     setShowSearchResults(true);
                   }}
                   onFocus={() => setShowSearchResults(true)}
-                  className="rounded-r-none bg-white text-foreground"
+                  className="rounded-r-none bg-card text-foreground border-0"
                 />
                 <Button className="rounded-l-none bg-accent text-accent-foreground hover:bg-accent/90">
                   <Search className="h-5 w-5" />
@@ -128,7 +128,7 @@ export function Navbar() {
                       <button
                         key={item.id}
                         onClick={() => handleSearchItemClick(item.id)}
-                        className="w-full flex gap-3 p-3 hover:bg-accent/10 text-left"
+                        className="w-full flex gap-3 p-3 hover:bg-secondary text-left"
                       >
                         <img
                           src={item.image}
