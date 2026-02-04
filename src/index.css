@@ -6,27 +6,21 @@
 
 @layer base {
   :root {
-    /* Page background - Clean & Professional White */
+    /* Pure white/off-white background for a clean e-commerce feel */
     --background: 210 20% 98%; 
     --foreground: 222 22% 15%;
 
-    /* Brand Blue - High Impact Navigation & Primary Buttons */
+    /* Brand Blue: Used for headers and primary CTAs */
     --primary: 213 90% 52%; 
     --primary-foreground: 0 0% 100%;
 
-    /* CTA Orange - Strictly for small highlights & Buttons */
+    /* Brand Orange: Strictly for buttons and important badges */
     --accent: 32 100% 50%; 
     --accent-foreground: 0 0% 100%;
 
-    /* Card & UI Surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222 22% 15%;
     --border: 214 20% 90%;
-    --radius: 0.4rem;
-
-    /* Footer - Deep Midnight (Luxury Feel) */
-    --footer-bg: 222 47% 11%; 
-    --footer-foreground: 214 20% 85%;
+    --radius: 0.5rem;
   }
 }
 
