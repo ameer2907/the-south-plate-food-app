@@ -37,47 +37,53 @@ import mysorePak from '@/assets/food/mysore-pak.jpg';
 import coconutBurfi from '@/assets/food/coconut-burfi.jpg';
 
 export const menuItems: MenuItem[] = [
-  { id: 'd1', name: 'Masala Dosa', description: 'Crispy golden dosa with spiced potato masala', price: 149, category: 'dosa', isVeg: true, image: masalaDosa },
-  { id: 'd2', name: 'Mysore Masala Dosa', description: 'Spicy dosa with red chutney and filling', price: 189, category: 'dosa', isVeg: true, image: mysoreDosa },
-  { id: 'd3', name: 'Rava Dosa', description: 'Crispy semolina dosa with onions', price: 169, category: 'dosa', isVeg: true, image: ravaDosa },
-  { id: 'd4', name: 'Ghee Roast Dosa', description: 'Extra crispy dosa roasted in ghee', price: 179, category: 'dosa', isVeg: true, image: gheeRoastDosa },
-  { id: 'd5', name: 'Paper Dosa', description: 'Ultra thin and crispy dosa', price: 139, category: 'dosa', isVeg: true, image: paperDosa },
-  { id: 'd6', name: 'Onion Dosa', description: 'Dosa topped with caramelized onions', price: 159, category: 'dosa', isVeg: true, image: onionDosa },
+  // Dosas - Premium Pricing
+  { id: 'd1', name: 'Masala Dosa', description: 'Crispy golden dosa with spiced potato masala', price: 249, category: 'dosa', isVeg: true, isPopular: true, image: masalaDosa },
+  { id: 'd2', name: 'Mysore Masala Dosa', description: 'Spicy dosa with red chutney and filling', price: 289, category: 'dosa', isVeg: true, isSpicy: true, image: mysoreDosa },
+  { id: 'd3', name: 'Rava Dosa', description: 'Crispy semolina dosa with onions', price: 269, category: 'dosa', isVeg: true, image: ravaDosa },
+  { id: 'd4', name: 'Ghee Roast Dosa', description: 'Extra crispy dosa roasted in pure ghee', price: 299, category: 'dosa', isVeg: true, isPopular: true, image: gheeRoastDosa },
+  { id: 'd5', name: 'Paper Dosa', description: 'Ultra thin and crispy dosa', price: 229, category: 'dosa', isVeg: true, image: paperDosa },
+  { id: 'd6', name: 'Onion Dosa', description: 'Dosa topped with caramelized onions', price: 259, category: 'dosa', isVeg: true, image: onionDosa },
 
-  { id: 'i1', name: 'Idli Sambar', description: 'Soft steamed idlis with sambar', price: 99, category: 'idli', isVeg: true, image: idliSambar },
-  { id: 'i2', name: 'Ghee Podi Idli', description: 'Idlis tossed in ghee and podi', price: 129, category: 'idli', isVeg: true, image: podiIdli },
-  { id: 'i3', name: 'Rava Idli', description: 'Soft semolina idlis', price: 119, category: 'idli', isVeg: true, image: ravaIdli },
-  { id: 'i4', name: 'Mini Idli', description: 'Mini idlis in hot sambar', price: 129, category: 'idli', isVeg: true, image: miniIdli },
+  // Idlis - Premium Pricing
+  { id: 'i1', name: 'Idli Sambar', description: 'Soft steamed idlis with sambar', price: 179, category: 'idli', isVeg: true, isPopular: true, image: idliSambar },
+  { id: 'i2', name: 'Ghee Podi Idli', description: 'Idlis tossed in ghee and podi', price: 219, category: 'idli', isVeg: true, isSpicy: true, image: podiIdli },
+  { id: 'i3', name: 'Rava Idli', description: 'Soft semolina idlis', price: 199, category: 'idli', isVeg: true, image: ravaIdli },
+  { id: 'i4', name: 'Mini Idli', description: 'Mini idlis in hot sambar', price: 209, category: 'idli', isVeg: true, image: miniIdli },
 
-  { id: 'v1', name: 'Medu Vada', description: 'Crispy urad dal vadas', price: 109, category: 'vada', isVeg: true, image: meduVada },
-  { id: 'v2', name: 'Sambar Vada', description: 'Vadas soaked in sambar', price: 119, category: 'vada', isVeg: true, image: sambarVada },
-  { id: 'v3', name: 'Dahi Vada', description: 'Vadas in sweet yogurt', price: 129, category: 'vada', isVeg: true, image: dahiVada },
-  { id: 'v4', name: 'Masala Vada', description: 'Spiced chana dal fritters', price: 119, category: 'vada', isVeg: true, image: masalaVada },
+  // Vadas - Premium Pricing
+  { id: 'v1', name: 'Medu Vada', description: 'Crispy urad dal vadas', price: 189, category: 'vada', isVeg: true, isPopular: true, image: meduVada },
+  { id: 'v2', name: 'Sambar Vada', description: 'Vadas soaked in sambar', price: 209, category: 'vada', isVeg: true, image: sambarVada },
+  { id: 'v3', name: 'Dahi Vada', description: 'Vadas in sweet yogurt', price: 219, category: 'vada', isVeg: true, image: dahiVada },
+  { id: 'v4', name: 'Masala Vada', description: 'Spiced chana dal fritters', price: 199, category: 'vada', isVeg: true, isSpicy: true, image: masalaVada },
 
-  { id: 'r1', name: 'Curd Rice', description: 'Creamy yogurt rice', price: 159, category: 'rice', isVeg: true, image: curdRice },
-  { id: 'r2', name: 'Lemon Rice', description: 'Tangy lemon rice', price: 159, category: 'rice', isVeg: true, image: lemonRice },
-  { id: 'r3', name: 'Tamarind Rice', description: 'Spicy tamarind rice', price: 169, category: 'rice', isVeg: true, image: tamarindRice },
-  { id: 'r4', name: 'Bisi Bele Bath', description: 'Karnataka special rice', price: 219, category: 'rice', isVeg: true, image: bisiBeleBath },
-  { id: 'r5', name: 'Coconut Rice', description: 'Rice with fresh coconut', price: 169, category: 'rice', isVeg: true, image: coconutRice },
+  // Rice Items - Premium Pricing
+  { id: 'r1', name: 'Curd Rice', description: 'Creamy yogurt rice', price: 259, category: 'rice', isVeg: true, isPopular: true, image: curdRice },
+  { id: 'r2', name: 'Lemon Rice', description: 'Tangy lemon rice', price: 259, category: 'rice', isVeg: true, image: lemonRice },
+  { id: 'r3', name: 'Tamarind Rice', description: 'Spicy tamarind rice', price: 279, category: 'rice', isVeg: true, isSpicy: true, image: tamarindRice },
+  { id: 'r4', name: 'Bisi Bele Bath', description: 'Karnataka special rice', price: 329, category: 'rice', isVeg: true, isSpicy: true, image: bisiBeleBath },
+  { id: 'r5', name: 'Coconut Rice', description: 'Rice with fresh coconut', price: 269, category: 'rice', isVeg: true, image: coconutRice },
 
-  { id: 'b1', name: 'Filter Coffee', description: 'Authentic South Indian filter coffee', price: 89, category: 'beverages', isVeg: true, image: filterCoffee },
-  { id: 'b2', name: 'Masala Chai', description: 'Spiced Indian tea', price: 79, category: 'beverages', isVeg: true, image: masalaChai },
-  { id: 'b3', name: 'Buttermilk', description: 'Cool spiced buttermilk', price: 89, category: 'beverages', isVeg: true, image: buttermilk },
-  { id: 'b4', name: 'Mango Lassi', description: 'Sweet mango yogurt drink', price: 129, category: 'beverages', isVeg: true, image: mangoLassi },
+  // Beverages - Premium Pricing
+  { id: 'b1', name: 'Filter Coffee', description: 'Authentic South Indian filter coffee', price: 149, category: 'beverages', isVeg: true, isPopular: true, image: filterCoffee },
+  { id: 'b2', name: 'Masala Chai', description: 'Spiced Indian tea', price: 129, category: 'beverages', isVeg: true, image: masalaChai },
+  { id: 'b3', name: 'Buttermilk', description: 'Cool spiced buttermilk', price: 139, category: 'beverages', isVeg: true, image: buttermilk },
+  { id: 'b4', name: 'Mango Lassi', description: 'Sweet mango yogurt drink', price: 199, category: 'beverages', isVeg: true, image: mangoLassi },
 
-  { id: 'de1', name: 'Kesari Bath', description: 'Sweet semolina dessert', price: 129, category: 'desserts', isVeg: true, image: kesariBath },
-  { id: 'de2', name: 'Payasam', description: 'Traditional rice pudding', price: 139, category: 'desserts', isVeg: true, image: payasam },
-  { id: 'de3', name: 'Mysore Pak', description: 'Rich ghee sweet', price: 149, category: 'desserts', isVeg: true, image: mysorePak },
-  { id: 'de4', name: 'Coconut Burfi', description: 'Sweet coconut fudge', price: 129, category: 'desserts', isVeg: true, image: coconutBurfi },
+  // Desserts - Premium Pricing
+  { id: 'de1', name: 'Kesari Bath', description: 'Sweet semolina dessert', price: 199, category: 'desserts', isVeg: true, isPopular: true, image: kesariBath },
+  { id: 'de2', name: 'Payasam', description: 'Traditional rice pudding', price: 219, category: 'desserts', isVeg: true, image: payasam },
+  { id: 'de3', name: 'Mysore Pak', description: 'Rich ghee sweet', price: 249, category: 'desserts', isVeg: true, image: mysorePak },
+  { id: 'de4', name: 'Coconut Burfi', description: 'Sweet coconut fudge', price: 209, category: 'desserts', isVeg: true, image: coconutBurfi },
 ];
 
 export const categoryLabels: Record<string, string> = {
-  dosa: '🥞 Dosas',
-  idli: '🍚 Idlis',
-  vada: '🍩 Vadas',
-  rice: '🍛 Rice Items',
-  curry: '🍲 Curries',
-  snacks: '🥘 Snacks',
-  beverages: '☕ Beverages',
-  desserts: '🍮 Desserts',
+  dosa: 'Dosas',
+  idli: 'Idlis',
+  vada: 'Vadas',
+  rice: 'Rice Items',
+  curry: 'Curries',
+  snacks: 'Snacks',
+  beverages: 'Beverages',
+  desserts: 'Desserts',
 };

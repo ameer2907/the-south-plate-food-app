@@ -48,7 +48,7 @@ export function ProductCard({ item }: ProductCardProps) {
 
         {/* Rating */}
         <div className="flex items-center gap-1 mb-3">
-          <div className="flex items-center gap-0.5 bg-success text-white text-xs font-medium px-1.5 py-0.5 rounded">
+          <div className="flex items-center gap-0.5 bg-success text-primary-foreground text-xs font-medium px-1.5 py-0.5 rounded">
             4.{Math.floor(Math.random() * 5) + 1}
             <Star className="h-3 w-3 fill-current" />
           </div>
@@ -56,7 +56,7 @@ export function ProductCard({ item }: ProductCardProps) {
             ({Math.floor(Math.random() * 500) + 100})
           </span>
           {item.isPopular && (
-            <span className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded font-medium ml-auto">
+            <span className="text-xs bg-accent text-accent-foreground px-2 py-0.5 rounded font-medium ml-auto">
               Bestseller
             </span>
           )}

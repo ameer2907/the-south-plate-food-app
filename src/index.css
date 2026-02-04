@@ -6,103 +6,103 @@
 
 @layer base {
   :root {
-    /* ===== LUXURY COLOR SYSTEM ===== */
+    /* ===== PROFESSIONAL E-COMMERCE COLOR SYSTEM (Flipkart/Amazon Style) ===== */
 
-    /* Main backgrounds */
-    --background: 220 14% 97%;          /* soft off-white */
-    --foreground: 222 25% 12%;          /* deep charcoal */
+    /* Main backgrounds - Clean white/light gray */
+    --background: 0 0% 96%;
+    --foreground: 220 15% 15%;
 
-    /* Cards */
+    /* Cards - Pure white */
     --card: 0 0% 100%;
-    --card-foreground: 222 25% 12%;
+    --card-foreground: 220 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 25% 12%;
+    --popover-foreground: 220 15% 15%;
 
-    /* Primary – Deep Navy (Luxury Brand Color) */
-    --primary: 215 45% 18%;
+    /* Primary – Professional Blue (Like Flipkart/Amazon) */
+    --primary: 213 80% 45%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary – Soft Neutral */
-    --secondary: 220 16% 94%;
-    --secondary-foreground: 222 25% 12%;
+    /* Secondary – Light Gray */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 15% 15%;
 
     /* Muted text */
-    --muted: 220 16% 92%;
-    --muted-foreground: 220 10% 42%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 45%;
 
-    /* Accent – Muted Gold (Luxury feel) */
-    --accent: 42 55% 48%;
-    --accent-foreground: 215 45% 18%;
+    /* Accent – Orange (E-commerce Standard) */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
 
     /* Destructive */
-    --destructive: 0 65% 48%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders & inputs */
-    --border: 220 14% 88%;
-    --input: 220 14% 88%;
-    --ring: 42 55% 48%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 213 80% 45%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     /* Status colors */
-    --success: 142 55% 42%;
-    --warning: 38 85% 55%;
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
 
-    /* Header */
-    --header-bg: 215 45% 18%;
-    --header-secondary: 215 38% 22%;
+    /* Header - Professional Blue */
+    --header-bg: 213 80% 45%;
+    --header-secondary: 213 80% 40%;
 
     /* Sidebar */
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222 25% 12%;
-    --sidebar-primary: 215 45% 18%;
+    --sidebar-foreground: 220 15% 15%;
+    --sidebar-primary: 213 80% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 16% 94%;
-    --sidebar-accent-foreground: 222 25% 12%;
-    --sidebar-border: 220 14% 88%;
-    --sidebar-ring: 42 55% 48%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 220 15% 15%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 213 80% 45%;
   }
 
-  /* ===== DARK MODE (PREMIUM, NOT PURE BLACK) ===== */
+  /* ===== DARK MODE ===== */
   .dark {
-    --background: 220 20% 8%;
-    --foreground: 220 16% 95%;
+    --background: 220 15% 10%;
+    --foreground: 220 14% 96%;
 
-    --card: 220 18% 12%;
-    --card-foreground: 220 16% 95%;
+    --card: 220 15% 13%;
+    --card-foreground: 220 14% 96%;
 
-    --popover: 220 18% 12%;
-    --popover-foreground: 220 16% 95%;
+    --popover: 220 15% 13%;
+    --popover-foreground: 220 14% 96%;
 
-    --primary: 42 55% 48%;
-    --primary-foreground: 215 45% 18%;
+    --primary: 213 80% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 18% 18%;
-    --secondary-foreground: 220 16% 95%;
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 220 14% 96%;
 
-    --muted: 220 16% 20%;
-    --muted-foreground: 220 12% 60%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 42 55% 48%;
-    --accent-foreground: 215 45% 18%;
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 55% 45%;
+    --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 16% 22%;
-    --input: 220 16% 22%;
-    --ring: 42 55% 48%;
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 213 80% 55%;
 
-    --sidebar-background: 220 18% 10%;
-    --sidebar-foreground: 220 16% 95%;
-    --sidebar-primary: 42 55% 48%;
-    --sidebar-primary-foreground: 215 45% 18%;
-    --sidebar-accent: 220 18% 16%;
-    --sidebar-accent-foreground: 220 16% 95%;
-    --sidebar-border: 220 16% 22%;
-    --sidebar-ring: 42 55% 48%;
+    --sidebar-background: 220 15% 12%;
+    --sidebar-foreground: 220 14% 96%;
+    --sidebar-primary: 213 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 220 14% 96%;
+    --sidebar-border: 220 15% 22%;
+    --sidebar-ring: 213 80% 55%;
   }
 }
 
@@ -117,14 +117,14 @@
   }
 }
 
-/* ===== PREMIUM ANIMATIONS ===== */
+/* ===== SMOOTH ANIMATIONS ===== */
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 0.35s ease-out forwards;
+    animation: fadeIn 0.25s ease-out forwards;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.45s ease-out forwards;
+    animation: slideUp 0.3s ease-out forwards;
   }
 
   @keyframes fadeIn {
@@ -135,20 +135,11 @@
   @keyframes slideUp {
     from {
       opacity: 0;
-      transform: translateY(12px);
+      transform: translateY(8px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
-  }
-
-  @keyframes pulse-subtle {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.015); }
-  }
-
-  .animate-pulse-subtle {
-    animation: pulse-subtle 2.2s ease-in-out infinite;
   }
 }

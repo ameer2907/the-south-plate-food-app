@@ -21,7 +21,7 @@ export default function Home() {
               </h1>
               <p className="text-lg opacity-90 mb-6 max-w-lg">
                 Discover the authentic flavors of South India. Crispy dosas, fluffy idlis, 
-                and aromatic spices—crafted with love, delivered to your door.
+                and aromatic spices - crafted with love, delivered to your door.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                 <Button asChild size="xl" variant="accent">
@@ -34,7 +34,13 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="text-9xl">🍛</div>
+            <div className="hidden md:block">
+              <div className="w-48 h-48 rounded-full bg-primary-foreground/10 flex items-center justify-center">
+                <div className="w-36 h-36 rounded-full bg-primary-foreground/20 flex items-center justify-center">
+                  <span className="text-2xl font-bold">Premium</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -47,7 +53,7 @@ export default function Home() {
               <Truck className="h-8 w-8 text-primary" />
               <div>
                 <p className="font-medium">Free Delivery</p>
-                <p className="text-sm text-muted-foreground">On orders over ₹299</p>
+                <p className="text-sm text-muted-foreground">On orders over ₹499</p>
               </div>
             </div>
             <div className="flex items-center gap-3 p-3">
@@ -85,23 +91,20 @@ export default function Home() {
               to={`/products?category=${key}`}
               className="flex flex-col items-center gap-2 p-4 bg-card rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
             >
-              <span className="text-4xl">
-                {label.split(' ')[0]}
-              </span>
-              <span className="text-sm font-medium text-center">
-                {label.split(' ').slice(1).join(' ')}
-              </span>
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <span className="text-primary font-semibold text-sm">{label.charAt(0)}</span>
+              </div>
+              <span className="text-sm font-medium text-center">{label}</span>
             </Link>
           ))}
         </div>
       </div>
 
-      {/* Best Sellers - Prominently placed after features */}
-      <div className="bg-accent/10 py-8 border-b border-border">
+      {/* Best Sellers */}
+      <div className="bg-secondary py-8 border-b border-border">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
-              <span className="text-2xl">🏆</span>
               <h2 className="text-2xl font-bold text-foreground">Best Sellers</h2>
               <span className="bg-accent text-accent-foreground text-xs font-bold px-2 py-1 rounded">TOP PICKS</span>
             </div>
@@ -120,7 +123,7 @@ export default function Home() {
       {/* Dosas Section */}
       <div className="container mx-auto px-4 py-10">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold">🥞 Popular Dosas</h2>
+          <h2 className="text-2xl font-bold">Popular Dosas</h2>
           <Link to="/products?category=dosa" className="text-primary hover:underline font-medium flex items-center gap-1">
             View all dosas <ArrowRight className="h-4 w-4" />
           </Link>
@@ -139,7 +142,7 @@ export default function Home() {
           <p className="text-lg mb-6 opacity-90">
             Get 20% off on your first order. Use code: FIRST20
           </p>
-          <Button asChild size="xl" className="bg-header hover:bg-header/90">
+          <Button asChild size="xl" className="bg-primary hover:bg-primary/90 text-primary-foreground">
             <Link to="/products">Browse Menu</Link>
           </Button>
         </div>

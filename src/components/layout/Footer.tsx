@@ -10,17 +10,17 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-header text-primary-foreground mt-auto">
+    <footer className="bg-primary text-primary-foreground mt-auto">
       {/* Back to top */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="w-full py-3 bg-header-secondary hover:bg-header-secondary/90 text-sm tracking-wide transition-colors"
       >
-        ↑ Back to top
+        Back to top
       </button>
 
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-14">
+      <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* About */}
           <div>
@@ -49,11 +49,11 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-primary-foreground/80">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-accent" />
-                +91 98765 43210
+                +91 90872 23978
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-accent" />
-                contact@thesouthplate.com
+                evolvesolutionpvtltd@gmail.com
               </li>
             </ul>
           </div>
@@ -90,7 +90,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-primary-foreground/80">
               <li className="flex gap-2">
                 <Clock className="h-4 w-4 text-accent mt-0.5" />
-                Mon – Sun: 7:00 AM – 11:00 PM
+                Mon - Sun: 7:00 AM - 11:00 PM
               </li>
               <li className="flex gap-2">
                 <MapPin className="h-4 w-4 text-accent mt-0.5" />
@@ -104,7 +104,7 @@ export function Footer() {
       {/* Bottom */}
       <div className="border-t border-primary-foreground/15 py-6 text-center">
         <p className="text-sm text-primary-foreground/70">
-          © 2024 The South Plate · Where Every Bite Tells a Story
+          © 2024 Evolve Solutions - The South Plate. All rights reserved.
         </p>
       </div>
     </footer>
