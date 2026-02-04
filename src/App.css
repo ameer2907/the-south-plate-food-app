@@ -1,56 +1,72 @@
-/* App-level layout refinements (Professional & Production-ready) */
+/* App Layout - Structured & Clean */
 
-/* Root container */
 #root {
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 1.25rem; /* slightly tighter like Flipkart */
+  min-height: 100vh;
+  /* Use standard padding for professional gutters */
+  padding: 0 1rem;
 }
 
-/* Global body alignment */
-body {
-  text-align: left;
-  background: transparent; /* let index.css control colors */
+/* Layout Container for the main content */
+.main-content {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
 }
 
-/* Logo styling (subtle brand presence) */
+/* Logo: Flipkart style usually has a horizontal footprint */
 .logo {
-  height: 4.25rem;
-  padding: 0.5rem;
-  transition: transform 0.25s ease, filter 0.25s ease;
+  height: 32px; /* Standardized height for navbars */
+  width: auto;
+  transition: opacity 0.2s ease;
+  object-fit: contain;
 }
 
 .logo:hover {
-  transform: scale(1.02);
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.12));
+  opacity: 0.9;
 }
 
-/* Disable playful/demo animations */
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Ensure no logo animation in production */
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: none;
-  }
-}
-
-/* Generic card spacing (neutral, reusable) */
+/* Professional Product/Content Cards */
 .card {
-  padding: 1.25rem;
-  border-radius: 0.75rem;
   background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 1rem;
+  /* Very subtle shadow only on hover for a "lift" effect */
+  transition: box-shadow 0.25s ease-in-out;
 }
 
-/* Muted helper text */
-.read-the-docs {
-  color: hsl(var(--muted-foreground));
-  font-size: 0.875rem;
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Typography Refinements */
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.price-text {
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  font-size: 1.25rem;
+}
+
+/* Subtle Link Styling */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: hsl(var(--primary));
+}
+
+/* Utility for sectioning */
+.section-divider {
+  height: 1px;
+  background-color: hsl(var(--border));
+  margin: 2rem 0;
 }
