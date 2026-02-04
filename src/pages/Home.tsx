@@ -11,33 +11,41 @@ export default function Home() {
 
   return (
     <MainLayout>
-      {/* Hero Banner */}
-      <div className="bg-gradient-to-r from-primary to-header-secondary text-primary-foreground py-12">
+      {/* Hero Banner - Clean & Professional White/Light Gray */}
+      <div className="bg-white border-b border-slate-100 py-16">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Where Every Bite Tells a Story
+              <h1 className="text-4xl md:text-6xl font-extrabold text-[#0F172A] mb-6 tracking-tight">
+                Authentic Flavors, <br />
+                <span className="text-[#2874f0]">Delivered to You.</span>
               </h1>
-              <p className="text-lg opacity-90 mb-6 max-w-lg">
-                Discover the authentic flavors of South India. Crispy dosas, fluffy idlis, 
-                and aromatic spices - crafted with love, delivered to your door.
+              <p className="text-lg text-slate-500 mb-8 max-w-lg leading-relaxed">
+                Experience the true taste of South India. From crispy dosas to 
+                aromatic filter coffee—crafted fresh and delivered in minutes.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                <Button asChild size="xl" variant="accent">
-                  <Link to="/products">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                {/* Flipkart Blue Primary Button */}
+                <Button asChild size="xl" className="bg-[#2874f0] hover:bg-[#1a5fcd] text-white rounded-sm px-10 shadow-lg transition-all">
+                  <Link to="/products" className="flex items-center gap-2">
                     Order Now <ArrowRight className="h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild size="xl" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+                <Button asChild size="xl" variant="outline" className="border-slate-200 text-slate-600 hover:bg-slate-50 rounded-sm">
                   <Link to="/about">Learn More</Link>
                 </Button>
               </div>
             </div>
+            {/* Visual Element - Simple & High End */}
             <div className="hidden md:block">
-              <div className="w-48 h-48 rounded-full bg-primary-foreground/10 flex items-center justify-center">
-                <div className="w-36 h-36 rounded-full bg-primary-foreground/20 flex items-center justify-center">
-                  <span className="text-2xl font-bold">Premium</span>
+              <div className="relative">
+                <div className="absolute -inset-4 bg-[#2874f0]/5 rounded-full blur-3xl"></div>
+                <div className="relative w-64 h-64 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center shadow-inner">
+                   <div className="text-center">
+                     <Award className="h-12 w-12 text-[#ff9f00] mx-auto mb-2" />
+                     <span className="block font-bold text-slate-800 uppercase tracking-tighter">Premium</span>
+                     <span className="text-xs text-slate-400">Quality Assured</span>
+                   </div>
                 </div>
               </div>
             </div>
@@ -45,74 +53,77 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Features */}
-      <div className="bg-card border-b border-border py-6">
+      {/* Features Bar - Subtle & Muted */}
+      <div className="bg-white border-b border-slate-100 py-8">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="flex items-center gap-3 p-3">
-              <Truck className="h-8 w-8 text-primary" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="flex flex-col items-center md:flex-row gap-4 text-center md:text-left">
+              <Truck className="h-8 w-8 text-[#2874f0]" />
               <div>
-                <p className="font-medium">Free Delivery</p>
-                <p className="text-sm text-muted-foreground">On orders over ₹499</p>
+                <p className="font-bold text-slate-800 text-sm">Free Delivery</p>
+                <p className="text-xs text-slate-400">Orders above ₹499</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 p-3">
-              <Clock className="h-8 w-8 text-primary" />
+            <div className="flex flex-col items-center md:flex-row gap-4 text-center md:text-left">
+              <Clock className="h-8 w-8 text-[#2874f0]" />
               <div>
-                <p className="font-medium">Fast Delivery</p>
-                <p className="text-sm text-muted-foreground">30-45 minutes</p>
+                <p className="font-bold text-slate-800 text-sm">Fast Delivery</p>
+                <p className="text-xs text-slate-400">30-45 Minutes</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 p-3">
-              <Shield className="h-8 w-8 text-primary" />
+            <div className="flex flex-col items-center md:flex-row gap-4 text-center md:text-left">
+              <Shield className="h-8 w-8 text-[#2874f0]" />
               <div>
-                <p className="font-medium">100% Vegetarian</p>
-                <p className="text-sm text-muted-foreground">Pure veg kitchen</p>
+                <p className="font-bold text-slate-800 text-sm">100% Veg</p>
+                <p className="text-xs text-slate-400">Pure Kitchen</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 p-3">
-              <Award className="h-8 w-8 text-primary" />
+            <div className="flex flex-col items-center md:flex-row gap-4 text-center md:text-left">
+              <Award className="h-8 w-8 text-[#2874f0]" />
               <div>
-                <p className="font-medium">Best Quality</p>
-                <p className="text-sm text-muted-foreground">Fresh ingredients</p>
+                <p className="font-bold text-slate-800 text-sm">Top Rated</p>
+                <p className="text-xs text-slate-400">4.5+ Avg Rating</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Categories */}
-      <div className="container mx-auto px-4 py-10">
-        <h2 className="text-2xl font-bold mb-6">Shop by Category</h2>
-        <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
+      {/* Categories - Professional Grid */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-bold text-slate-900">Explore Menu</h2>
+          <div className="h-px flex-1 bg-slate-100 mx-6 hidden sm:block"></div>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4">
           {Object.entries(categoryLabels).map(([key, label]) => (
             <Link
               key={key}
               to={`/products?category=${key}`}
-              className="flex flex-col items-center gap-2 p-4 bg-card rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
+              className="group flex flex-col items-center gap-3 p-6 bg-white rounded-sm border border-slate-100 hover:border-[#2874f0] hover:shadow-md transition-all"
             >
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-primary font-semibold text-sm">{label.charAt(0)}</span>
+              <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#2874f0]/10 transition-colors">
+                <span className="text-[#2874f0] font-bold text-sm">{label.charAt(0)}</span>
               </div>
-              <span className="text-sm font-medium text-center">{label}</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-600 group-hover:text-[#2874f0]">{label}</span>
             </Link>
           ))}
         </div>
       </div>
 
-      {/* Best Sellers */}
-      <div className="bg-secondary py-8 border-b border-border">
+      {/* Best Sellers Section */}
+      <div className="bg-slate-50 py-16">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-3">
-              <h2 className="text-2xl font-bold text-foreground">Best Sellers</h2>
-              <span className="bg-accent text-accent-foreground text-xs font-bold px-2 py-1 rounded">TOP PICKS</span>
+          <div className="flex items-center justify-between mb-10">
+            <div className="flex items-center gap-4">
+              <h2 className="text-3xl font-bold text-slate-900">Best Sellers</h2>
+              <span className="bg-[#ff9f00] text-white text-[10px] font-black px-2 py-1 rounded-sm tracking-tighter">TOP RATED</span>
             </div>
-            <Link to="/products" className="text-primary hover:underline font-medium flex items-center gap-1">
-              View all <ArrowRight className="h-4 w-4" />
+            <Link to="/products" className="text-[#2874f0] text-sm font-bold flex items-center gap-1 hover:underline">
+              SEE ALL <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {popularItems.slice(0, 4).map((item) => (
               <ProductCard key={item.id} item={item} />
             ))}
@@ -120,30 +131,16 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Dosas Section */}
-      <div className="container mx-auto px-4 py-10">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold">Popular Dosas</h2>
-          <Link to="/products?category=dosa" className="text-primary hover:underline font-medium flex items-center gap-1">
-            View all dosas <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {dosas.map((item) => (
-            <ProductCard key={item.id} item={item} />
-          ))}
-        </div>
-      </div>
-
-      {/* CTA Banner */}
-      <div className="bg-accent text-accent-foreground py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Hungry? Order Now!</h2>
-          <p className="text-lg mb-6 opacity-90">
-            Get 20% off on your first order. Use code: FIRST20
+      {/* CTA Banner - Deep Navy Theme */}
+      <div className="bg-[#0B1F33] py-20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#2874f0]/10 blur-[100px] rounded-full"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-4xl font-extrabold text-white mb-4">First time here?</h2>
+          <p className="text-slate-400 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+            Join the community of food lovers. Use code <span className="text-[#ff9f00] font-bold">FIRST20</span> to get 20% off your first meal.
           </p>
-          <Button asChild size="xl" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            <Link to="/products">Browse Menu</Link>
+          <Button asChild size="xl" className="bg-[#ff9f00] hover:bg-[#f39700] text-white font-bold rounded-sm px-12 shadow-xl border-none">
+            <Link to="/products">Browse the Menu</Link>
           </Button>
         </div>
       </div>
