@@ -1,102 +1,77 @@
-import { useState, useMemo, useRef, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Search, ShoppingCart, User, MapPin, Menu, ChevronDown, LogOut } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { useCart } from '@/context/CartContext';
-import { useAuth } from '@/context/AuthContext';
-import { menuItems, categoryLabels } from '@/data/menuData';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { MapPin, Search, ShoppingCart, ChevronDown } from 'lucide-react';
+
+const SOUTH_INDIAN_LOCATIONS = ["Chennai", "Bangalore", "Hyderabad", "Kochi", "Madurai", "Coimbatore"];
 
 export function Navbar() {
-  const { itemCount } = useCart();
-  const { user, isAuthenticated, logout } = useAuth();
-  const navigate = useNavigate();
-
-  const [searchQuery, setSearchQuery] = useState('');
-  const [showSearchResults, setShowSearchResults] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState('Koramangala, Bengaluru');
-  const searchRef = useRef<HTMLDivElement>(null);
+  const [location, setLocation] = useState("Chennai, TN");
+  const [showLocations, setShowLocations] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full shadow-md">
-      {/* Top Bar: Brand Blue */}
-      <div className="bg-[#2874f0] text-white">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between gap-6">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-slate-100 shadow-sm">
+      <div className="container mx-auto px-4 h-20 flex items-center justify-between gap-4">
+        
+        {/* Branding: THE SOUTH PLATE (BIG) BY EVOLVE SOLUTIONS (small) */}
+        <Link to="/" className="flex flex-col leading-none min-w-fit">
+          <span className="font-[900] text-2xl md:text-3xl tracking-tighter italic text-[#2874f0]">
+            THE SOUTH <span className="text-[#ff9f00]">PLATE</span>
+          </span>
+          <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400 mt-1">
+            BY EVOLVE SOLUTIONS
+          </span>
+        </Link>
+
+        {/* Dynamic Location Switcher */}
+        <div className="relative">
+          <button 
+            onClick={() => setShowLocations(!showLocations)}
+            className="hidden lg:flex items-center gap-2 text-slate-600 hover:text-[#2874f0] font-bold transition-all px-3 py-2 rounded-md hover:bg-slate-50 border border-transparent hover:border-slate-100"
+          >
+            <MapPin className="h-4 w-4 text-[#ff9f00]" />
+            <span className="text-xs uppercase tracking-tight">{location}</span>
+            <ChevronDown className={`h-3 w-3 transition-transform ${showLocations ? 'rotate-180' : ''}`} />
+          </button>
           
-          {/* Logo Section - THE SOUTH PLATE (BIG) */}
-          <Link to="/" className="flex flex-col leading-none group min-w-fit">
-            <span className="font-[900] text-2xl md:text-3xl tracking-tighter italic text-white">
-              THE SOUTH <span className="text-[#ff9f00]">PLATE</span>
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/80 mt-1">
-              BY EVOLVE SOLUTIONS
-            </span>
-          </Link>
-
-          {/* Location Picker - OG Style */}
-          <div className="hidden lg:flex items-center gap-1 text-white/90 hover:bg-white/10 cursor-pointer transition-colors px-3 py-2 rounded-sm">
-            <MapPin className="h-4 w-4" />
-            <span className="text-xs font-bold uppercase tracking-tight">{selectedLocation}</span>
-            <ChevronDown className="h-3 w-3" />
-          </div>
-
-          {/* Search Bar - Professional White Style */}
-          <div className="flex-1 max-w-2xl relative" ref={searchRef}>
-            <div className="relative flex group">
-              <Input
-                type="text"
-                placeholder="Search for luxury food, dosas, meals..."
-                value={searchQuery}
-                className="w-full bg-white border-none text-slate-900 focus:ring-0 pl-10 h-10 rounded-r-none rounded-l-sm transition-all"
-              />
-              <Search className="absolute left-3 top-2.5 h-5 w-5 text-slate-400" />
-              <button className="bg-[#ff9f00] px-5 rounded-r-sm hover:bg-[#f39700] transition-colors">
-                <Search className="h-5 w-5 text-white" />
-              </button>
+          {showLocations && (
+            <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-slate-100 shadow-xl rounded-md py-2 animate-fade-in">
+              {SOUTH_INDIAN_LOCATIONS.map(city => (
+                <button 
+                  key={city}
+                  onClick={() => { setLocation(city); setShowLocations(false); }}
+                  className="w-full text-left px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#2874f0] font-medium"
+                >
+                  {city}
+                </button>
+              ))}
             </div>
-          </div>
+          )}
+        </div>
 
-          {/* Action Buttons */}
-          <div className="flex items-center gap-6">
-            {isAuthenticated ? (
-               <Button variant="ghost" className="text-white font-bold text-sm hover:bg-white/10">
-                 <User className="h-4 w-4 mr-2" />
-                 {user?.name.split(' ')[0]}
-               </Button>
-            ) : (
-              <Button 
-                onClick={() => navigate('/login')}
-                className="bg-white text-[#2874f0] hover:bg-slate-100 font-black px-8 rounded-sm h-9 uppercase tracking-wider text-xs shadow-md"
-              >
-                Login
-              </Button>
-            )}
+        {/* Search Bar - Professional White/Gray */}
+        <div className="flex-1 max-w-xl relative">
+          <input 
+            type="text" 
+            placeholder="Search for luxury food, dosas, meals..." 
+            className="w-full bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-[#2874f0]/10 pl-10 pr-4 h-11 rounded-sm transition-all"
+          />
+          <Search className="absolute left-3 top-3 h-5 w-5 text-slate-400" />
+        </div>
 
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="relative text-white hover:bg-white/10"
-              onClick={() => navigate('/cart')}
-            >
-              <ShoppingCart className="h-6 w-6" />
-              {itemCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#ff9f00] text-white text-[10px] font-black h-5 w-5 flex items-center justify-center rounded-full border-2 border-[#2874f0] shadow-sm">
-                  {itemCount}
-                </span>
-              )}
-            </Button>
-          </div>
+        <div className="flex items-center gap-4">
+          <button className="bg-[#2874f0] text-white px-6 h-10 rounded-sm font-bold text-xs uppercase tracking-wider shadow-md hover:bg-[#1a5fcd]">Login</button>
+          <ShoppingCart className="h-6 w-6 text-slate-600 cursor-pointer hover:text-[#2874f0]" />
         </div>
       </div>
 
-      {/* Secondary Nav Bar: Home, About, Contact */}
-      <div className="bg-[#1a5fcd] border-t border-white/10 text-white">
-        <div className="container mx-auto px-4 flex gap-8 py-2.5 text-xs font-bold uppercase tracking-[0.2em]">
-          <Link to="/" className="hover:text-[#ff9f00] transition-colors">Home</Link>
-          <Link to="/about" className="hover:text-[#ff9f00] transition-colors">About</Link>
-          <Link to="/contact" className="hover:text-[#ff9f00] transition-colors">Contact</Link>
+      {/* Secondary Navigation (Home, About, Contact) */}
+      <nav className="bg-[#f8fafc] border-b border-slate-100">
+        <div className="container mx-auto px-4 flex gap-8 py-2.5 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
+          <Link to="/" className="hover:text-[#2874f0]">Home</Link>
+          <Link to="/about" className="hover:text-[#2874f0]">About</Link>
+          <Link to="/contact" className="hover:text-[#2874f0]">Contact</Link>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }
