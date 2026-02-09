@@ -1,14 +1,16 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { MapPin, Search, ShoppingCart, ChevronDown, X, User } from 'lucide-react';
+import { MapPin, Search, ShoppingCart, ChevronDown, X } from 'lucide-react';
 import { menuItems } from '@/data/menuData'; 
-import { useAuth } from '@/context/AuthContext'; // Import for login logic
+import { useAuth } from '@/context/AuthContext';
+import { useCart } from '@/context/CartContext';
 
 const SOUTH_INDIAN_LOCATIONS = ["Chennai", "Bangalore", "Hyderabad", "Kochi", "Madurai", "Coimbatore"];
 
 export function Navbar() {
   const navigate = useNavigate();
   const { user, isAuthenticated } = useAuth();
+  const { itemCount } = useCart();
   const [location, setLocation] = useState("Chennai, TN");
   const [showLocations, setShowLocations] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -92,8 +94,10 @@ export function Navbar() {
             {isAuthenticated ? user?.name.split(' ')[0] : 'Login'}
           </button>
           <div className="relative cursor-pointer group" onClick={() => navigate('/cart')}>
-            <ShoppingCart className="h-6 w-6 text-slate-600 group-hover:text-[#2874f0] transition-colors" />
-            <span className="absolute -top-2 -right-2 bg-[#ff9f00] text-white text-[10px] font-black h-4 w-4 flex items-center justify-center rounded-full border border-white">0</span>
+            <ShoppingCart className="h-6 w-6 text-slate-600 group-hover:text-primary transition-colors" />
+            <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-black h-5 w-5 flex items-center justify-center rounded-full border-2 border-white">
+              {itemCount}
+            </span>
           </div>
         </div>
       </div>
