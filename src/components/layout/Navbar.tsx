@@ -1,15 +1,22 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { MapPin, Search, ShoppingCart, ChevronDown, X } from 'lucide-react';
+import { MapPin, Search, ShoppingCart, ChevronDown, X, LogOut, User } from 'lucide-react';
 import { menuItems } from '@/data/menuData'; 
 import { useAuth } from '@/context/AuthContext';
 import { useCart } from '@/context/CartContext';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const SOUTH_INDIAN_LOCATIONS = ["Chennai", "Bangalore", "Hyderabad", "Kochi", "Madurai", "Coimbatore"];
 
 export function Navbar() {
   const navigate = useNavigate();
-  const { user, isAuthenticated } = useAuth();
+  const { user, isAuthenticated, logout } = useAuth();
   const { itemCount } = useCart();
   const [location, setLocation] = useState("Chennai, TN");
   const [showLocations, setShowLocations] = useState(false);
@@ -90,12 +97,32 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <button onClick={() => navigate('/login')} className="bg-[#2874f0] text-white px-6 h-10 rounded-sm font-bold text-xs uppercase tracking-wider shadow-md hover:bg-[#1a5fcd] transition-all">
-            {isAuthenticated ? user?.name.split(' ')[0] : 'Login'}
-          </button>
+          {isAuthenticated ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger className="bg-primary text-primary-foreground px-6 h-10 rounded-sm font-bold text-xs uppercase tracking-wider shadow-md hover:bg-primary/90 transition-all flex items-center gap-2">
+                <User className="h-4 w-4" />
+                {user?.name.split(' ')[0]}
+                <ChevronDown className="h-3 w-3" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem className="font-medium text-muted-foreground text-xs">
+                  {user?.email}
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={logout} className="text-destructive focus:text-destructive cursor-pointer">
+                  <LogOut className="h-4 w-4 mr-2" />
+                  Logout
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <button onClick={() => navigate('/login')} className="bg-primary text-primary-foreground px-6 h-10 rounded-sm font-bold text-xs uppercase tracking-wider shadow-md hover:bg-primary/90 transition-all">
+              Login
+            </button>
+          )}
           <div className="relative cursor-pointer group" onClick={() => navigate('/cart')}>
-            <ShoppingCart className="h-6 w-6 text-slate-600 group-hover:text-primary transition-colors" />
-            <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-black h-5 w-5 flex items-center justify-center rounded-full border-2 border-white">
+            <ShoppingCart className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors" />
+            <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-black h-5 w-5 flex items-center justify-center rounded-full border-2 border-background">
               {itemCount}
             </span>
           </div>
