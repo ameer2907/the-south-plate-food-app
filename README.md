@@ -36,10 +36,10 @@ the-south-plate-restaurant-app/ │ ├── src/ │ ├── components/ │
 To run this project locally:
 
 Clone the repository
-git clone https://github.com/ameer2907/the-south-plate-restaurant-app.git
+git clone https://github.com/ameer2907/the-south-plate-food-app.git
 
 Navigate into the project folder
-cd the-south-plate-restaurant-app
+cd the-south-plate-food-app
 
 Install dependencies
 npm install
